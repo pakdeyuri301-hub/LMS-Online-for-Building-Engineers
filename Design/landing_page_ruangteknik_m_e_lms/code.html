@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RuangTeknik — Platform Edukasi M&amp;E Engineering &amp; K3 Teknisi Gedung</title>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#410005",
+            "on-tertiary-fixed": "#071e2a",
+            "on-tertiary-fixed-variant": "#354957",
+            "surface-tint": "#aa3435",
+            "secondary-fixed": "#f3e1bc",
+            "primary-container": "#790d16",
+            "on-primary-fixed-variant": "#891b20",
+            "tertiary-fixed": "#cfe6f6",
+            "outline-variant": "#dfbfbd",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#6a5d40",
+            "on-tertiary-container": "#93a9b8",
+            "surface-variant": "#dee2ec",
+            "inverse-surface": "#2c3138",
+            "background": "#f8f9ff",
+            "secondary-container": "#f3e1bc",
+            "on-secondary-fixed-variant": "#51452a",
+            "on-background": "#171c23",
+            "outline": "#8b716f",
+            "surface-container-highest": "#dee2ec",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "primary": "#540008",
+            "on-surface": "#171c23",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f0f4fd",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#231a04",
+            "on-surface-variant": "#584140",
+            "surface": "#f8f9ff",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#ffb3af",
+            "on-secondary-container": "#706346",
+            "on-primary-container": "#ff7f7b",
+            "surface-bright": "#f8f9ff",
+            "surface-container": "#eaeef8",
+            "tertiary": "#132834",
+            "surface-container-high": "#e4e8f2",
+            "secondary-fixed-dim": "#d6c5a1",
+            "primary-fixed": "#ffdad7",
+            "surface-dim": "#d6dae4",
+            "primary-fixed-dim": "#ffb3af",
+            "inverse-on-surface": "#edf1fb",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#293e4b",
+            "tertiary-fixed-dim": "#b3c9da",
+            "on-secondary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "gutter-mobile": "0.75rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.25rem"
+          },
+          "fontFamily": {
+            "label-k3": ["Inter"],
+            "headline-md": ["Inter"],
+            "label-code": ["JetBrains Mono"],
+            "body-lg": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "headline-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "title-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-badge": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-xl": ["Inter"]
+          },
+          "fontSize": {
+            "label-k3": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .blueprint-grid {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(139, 113, 111, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 113, 111, 0.08) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-[#F5EFE1] text-on-surface antialiased font-body-md selection:bg-primary-container selection:text-white">
+<!-- TOP APP BAR / HEADER -->
+<header class="bg-surface-container-lowest border-b border-outline-variant w-full px-space-lg h-16 flex items-center justify-between sticky top-0 z-40">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary-container tracking-tight">RuangTeknik</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-label-code font-bold px-1.5 py-0.5 rounded border border-outline-variant">M&amp;E ENG</span>
+</div>
+<span class="text-[11px] font-label-code text-on-surface-variant leading-none">Divisi Mekanikal &amp; Elektrikal Gedung</span>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="hidden lg:flex items-center relative w-72">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-[#FAF7F2] border border-[#D5C8B2] rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none focus:bg-white focus:border-primary-container transition-all" placeholder="Cari SOP, Chiller, LOTO, SNI..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links & CTA -->
+<div class="flex items-center gap-space-md">
+<nav class="hidden md:flex items-center gap-space-md text-body-md">
+<a class="text-primary-container font-title-md text-title-md border-b-2 border-primary-container pb-1" href="#katalog">Katalog Modul</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" href="#jalur-gedung">Jalur Fasilitas Gedung</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" href="#standar-k3">Standar SOP &amp; K3</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" href="#tentang">Jadwal Pelatihan</a>
+</nav>
+<div class="h-6 w-[1px] bg-outline-variant hidden md:block"></div>
+<!-- Quick Toggle Role & CTA -->
+<div class="flex items-center gap-space-sm">
+<button class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 text-on-secondary-container bg-secondary-container hover:bg-secondary-fixed-dim rounded-lg text-body-sm font-label-code border border-outline-variant transition-colors" title="Beralih peran pengajar/administrator">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>Beralih ke Admin</span>
+</button>
+<a class="px-3.5 py-2 text-primary-container font-title-md text-body-md hover:bg-[#FAF7F2] rounded-lg transition-colors" href="#login">Masuk</a>
+<a class="px-4 py-2 bg-primary-container text-white font-title-md text-body-md rounded-lg hover:bg-primary transition-colors shadow-sm flex items-center gap-1.5" href="#katalog">
+<span>Mulai Belajar</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- HERO SECTION WITH INDUSTRIAL BLUEPRINT CARD -->
+<section class="blueprint-grid border-b border-[#E1D5C1] px-space-md lg:px-space-xl py-12 lg:py-16">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left: Copy & Metrics -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-[#FAF7F2] border border-[#E5D3AF] rounded-full w-fit">
+<span class="w-2 h-2 rounded-full bg-[#1B6D2F] animate-pulse"></span>
+<span class="font-label-code text-label-badge text-primary-container uppercase font-bold tracking-wider">Kurikulum M&amp;E Standar SNI 03-6572 &amp; K3 Kemenaker</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary-container tracking-tight leading-tight">
+            Belajar Teknologi Gedung, Tingkatkan Kompetensi.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Platform pembelajaran teknik gedung mekanikal &amp; elektrikal berstandar industri Indonesia: Hotel, Rumah Sakit, Data Center, Mall, Perkantoran &amp; Pabrik. Vendor-neutral, berbasis SOP &amp; K3 nyata.
+          </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-2">
+<a class="h-11 px-6 bg-primary-container text-white font-title-md text-title-md rounded-lg hover:bg-primary flex items-center gap-2 shadow-sm transition-all active:scale-95" href="#modul">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+<span>Jelajahi 11 Modul Inti</span>
+</a>
+<a class="h-11 px-5 bg-white border border-primary-container text-primary-container font-title-md text-title-md rounded-lg hover:bg-[#FAF7F2] flex items-center gap-2 transition-all" href="#k3-preview">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span>Lihat Standar SOP &amp; K3</span>
+</a>
+</div>
+<!-- Technical Metrics Bar -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-6 mt-4 border-t border-[#E1D5C1]">
+<div class="bg-white p-3 rounded-lg border border-[#E1D5C1]">
+<div class="font-label-code text-[22px] font-bold text-primary-container leading-none">11 Modul</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Kurikulum Lengkap</div>
+</div>
+<div class="bg-white p-3 rounded-lg border border-[#E1D5C1]">
+<div class="font-label-code text-[22px] font-bold text-primary-container leading-none">120+ SOP</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Checklist Pemeliharaan</div>
+</div>
+<div class="bg-white p-3 rounded-lg border border-[#E1D5C1]">
+<div class="font-label-code text-[22px] font-bold text-primary-container leading-none">8 Fasilitas</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Kategori Bangunan</div>
+</div>
+<div class="bg-white p-3 rounded-lg border border-[#E1D5C1]">
+<div class="font-label-code text-[22px] font-bold text-primary-container leading-none">3,500+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">Teknisi Tersertifikasi</div>
+</div>
+</div>
+</div>
+<!-- Right: Diagnostic Schematic Preview Card (HVAC Chiller & BMS) -->
+<div class="lg:col-span-5">
+<div class="bg-white rounded-xl border border-[#AEC4D4] p-space-md shadow-[0_4px_12px_rgba(30,35,42,0.08)] relative overflow-hidden">
+<!-- Header bar of schematic -->
+<div class="flex items-center justify-between pb-3 border-b border-[#E1D5C1] mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0F5B8C] text-[20px]">tune</span>
+<span class="font-label-code text-label-code font-bold text-on-surface">BMS-HVAC-CH-01 // TELEMETRI REAL-TIME</span>
+</div>
+<span class="bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] text-[10px] font-label-code font-bold px-2 py-0.5 rounded">NORMAL RUNNING</span>
+</div>
+<!-- Blueprint Viewport -->
+<div class="bg-[#FAF7F2] border border-[#D5C8B2] rounded-lg p-3 relative font-label-code text-body-sm">
+<div class="flex items-center justify-between text-xs text-on-surface-variant pb-2 border-b border-dashed border-[#D5C8B2]">
+<span>PLANT: WATER-COOLED CENTRIFUGAL CHILLER 500 TR</span>
+<span class="text-primary-container font-bold">COP: 5.82</span>
+</div>
+<!-- Schematic Interactive Nodes Graphic Representation -->
+<div class="py-4 grid grid-cols-3 gap-2 text-center text-xs">
+<div class="bg-white p-2 rounded border border-[#E1D5C1]">
+<div class="text-[10px] text-on-surface-variant">CHILLED WATER IN</div>
+<div class="text-headline-sm font-bold text-[#0F5B8C] mt-0.5">12.2 °C</div>
+<div class="text-[9px] text-[#0F5B8C] font-semibold">SP: 12.0 °C</div>
+</div>
+<div class="bg-white p-2 rounded border border-[#E1D5C1]">
+<div class="text-[10px] text-on-surface-variant">CHILLED WATER OUT</div>
+<div class="text-headline-sm font-bold text-[#1B6D2F] mt-0.5">7.1 °C</div>
+<div class="text-[9px] text-[#1B6D2F] font-semibold">DELTA-T: 5.1 °C</div>
+</div>
+<div class="bg-white p-2 rounded border border-[#E1D5C1]">
+<div class="text-[10px] text-on-surface-variant">CONDENSER IN/OUT</div>
+<div class="text-headline-sm font-bold text-[#8F4E00] mt-0.5">32/37 °C</div>
+<div class="text-[9px] text-on-surface-variant font-semibold">CT FLOW: 100%</div>
+</div>
+</div>
+<!-- Parameter Table -->
+<div class="mt-2 text-[11px] bg-white rounded border border-[#E1D5C1] divide-y divide-[#FAF7F2]">
+<div class="flex justify-between px-2.5 py-1.5">
+<span class="text-on-surface-variant">Motor Current Draw (L1/L2/L3)</span>
+<span class="font-bold text-on-surface">312A / 310A / 314A</span>
+</div>
+<div class="flex justify-between px-2.5 py-1.5">
+<span class="text-on-surface-variant">Evaporator Approach Temp</span>
+<span class="font-bold text-[#1B6D2F]">0.8 °C (Bersih / No Fouling)</span>
+</div>
+<div class="flex justify-between px-2.5 py-1.5">
+<span class="text-on-surface-variant">Refrigerant Pressure (R-134a)</span>
+<span class="font-bold text-on-surface">Suction: 38 psig | Disch: 135 psig</span>
+</div>
+</div>
+<!-- Floating Micro K3 Alert in Schematic -->
+<div class="mt-3 bg-[#FFE088] border-l-4 border-[#8F4E00] p-2 text-[11px] text-[#2A1700] rounded-r">
+<div class="font-bold font-label-code">[SOP-K3-HVAC] PERINGATAN REFRIGERANT LEAK TEST</div>
+<div>Gunakan sensor halogen &amp; ventilasi paksa sebelum memasuki plant room bawah tanah (Basement 2).</div>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="flex items-center gap-1 font-label-code">
+<span class="material-symbols-outlined text-[14px] text-primary-container">info</span>
+                Modul 1: Sub-bab 1.3 Simulasi Log Sheet
+              </span>
+<a class="text-primary-container font-title-md hover:underline flex items-center" href="#modul">
+                Mulai Simulasi <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: JALUR SPESIALISASI GEDUNG (INTERACTIVE PILLS) -->
+<section class="py-12 px-space-md lg:px-space-xl max-w-7xl mx-auto" id="jalur-gedung">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<div class="font-label-code text-label-badge text-primary-container uppercase font-bold tracking-wider">Jalur Fasilitas Khusus</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Spesialisasi Berdasarkan Tipologi Gedung</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Setiap bangunan memiliki karakteristik sistem utilitas dan standar regulasi yang berbeda secara signifikan.</p>
+</div>
+<div class="text-body-sm font-label-code text-on-surface-variant">Pilih fasilitas untuk memfilter modul relevan</div>
+</div>
+<!-- Facility Category Pills -->
+<div class="flex flex-wrap gap-2.5 mb-8">
+<button class="px-4 py-2 bg-primary-container text-white font-title-md text-body-sm rounded-lg flex items-center gap-2 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">hotel</span>
+<span>Hotel Bintang 5</span>
+</button>
+<button class="px-4 py-2 bg-white hover:bg-secondary-container border border-[#E1D5C1] text-on-surface font-title-md text-body-sm rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">local_hospital</span>
+<span>Rumah Sakit (Cleanroom &amp; Gas Medis)</span>
+</button>
+<button class="px-4 py-2 bg-white hover:bg-secondary-container border border-[#E1D5C1] text-on-surface font-title-md text-body-sm rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">dns</span>
+<span>Data Center (Tier III/IV Cooling &amp; UPS)</span>
+</button>
+<button class="px-4 py-2 bg-white hover:bg-secondary-container border border-[#E1D5C1] text-on-surface font-title-md text-body-sm rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+<span>Mall / Pusat Perbelanjaan</span>
+</button>
+<button class="px-4 py-2 bg-white hover:bg-secondary-container border border-[#E1D5C1] text-on-surface font-title-md text-body-sm rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">factory</span>
+<span>Pabrik Industri &amp; Manufaktur</span>
+</button>
+<button class="px-4 py-2 bg-white hover:bg-secondary-container border border-[#E1D5C1] text-on-surface font-title-md text-body-sm rounded-lg flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">apartment</span>
+<span>Gedung Perkantoran Tinggi</span>
+</button>
+</div>
+<!-- Facility Focus Bento Showcase -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Card 1 -->
+<div class="bg-white border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-code text-[11px] font-bold text-primary-container bg-primary-fixed px-2 py-0.5 rounded">FOKUS UTAMA</span>
+<span class="material-symbols-outlined text-outline">hotel</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Kenyamanan Akustik &amp; Kualitas Air Hotel</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Pengendalian kebisingan FCU kamar tamu (&lt; 35 dBA), keseimbangan balancing valve hydronic, dan desinfeksi sistem air panas sentral (anti-Legionella).
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-[#FAF7F2] flex items-center justify-between text-xs">
+<span class="font-label-code text-on-surface-variant">Modul Terkait: 01, 03, 08</span>
+<a class="text-primary-container font-semibold hover:underline" href="#katalog">Pelajari SOP →</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-code text-[11px] font-bold text-[#8F4E00] bg-[#FFE088] px-2 py-0.5 rounded">HIGH REDUNDANCY</span>
+<span class="material-symbols-outlined text-outline">dns</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Data Center Precision Cooling &amp; N+1 UPS</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Siklus CRAC/CRAH cold aisle containment, pemeliharaan battery bank VRLA, sinkronisasi genset transisi terbuka/tertutup, dan standar TIA-942.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-[#FAF7F2] flex items-center justify-between text-xs">
+<span class="font-label-code text-on-surface-variant">Modul Terkait: 02, 05, 11</span>
+<a class="text-primary-container font-semibold hover:underline" href="#katalog">Pelajari SOP →</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-code text-[11px] font-bold text-[#1B6D2F] bg-[#D7F5D7] px-2 py-0.5 rounded">CRITICAL LIFE-SAFETY</span>
+<span class="material-symbols-outlined text-outline">local_hospital</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ruang Isolasi Tekanan Negatif &amp; Gas Medis RS</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Filter HEPA, pemantauan differential pressure magnehelic ruang isolasi, pemipaan manifold Oksigen/Nitrous/Vacuum berstandar Permenkes.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-[#FAF7F2] flex items-center justify-between text-xs">
+<span class="font-label-code text-on-surface-variant">Modul Terkait: 01, 10, 11</span>
+<a class="text-primary-container font-semibold hover:underline" href="#katalog">Pelajari SOP →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: 11 MODUL INTI KURIKULUM M&E PREVIEW GRID -->
+<section class="bg-white py-16 px-space-md lg:px-space-xl border-y border-[#E1D5C1]" id="modul">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-secondary-container border border-outline-variant rounded font-label-code text-label-badge text-on-secondary-container font-bold mb-2">
+              STANDAR RESMI NASIONAL
+            </div>
+<h2 class="font-headline-lg text-headline-lg text-primary-container">11 Modul Inti Kurikulum Teknik M&amp;E Gedung</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+              Disusun secara sistematis oleh praktisi Chief Engineer dan Konsultan M&amp;E bersertifikat BNSP &amp; Kemenaker. Dilengkapi video animasi, simulasi skema, dan bank soal studi kasus.
+            </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-body-sm font-label-code text-on-surface-variant">11 Modul Lengkap</span>
+</div>
+</div>
+<!-- 11 Modules Grid (Dense Industrial Card System) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- 01. HVAC & Refrigerasi -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 01</span>
+<span class="material-symbols-outlined text-primary-container">ac_unit</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">HVAC dan Refrigerasi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Chiller sentrifugal/screw, Cooling Tower, Primary-Secondary Pump, Air Handling Unit (AHU), Variable Refrigerant Volume (VRV/VRF), dan psikrometrik udara.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Water-Cooled</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Air-Cooled</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">COP Analysis</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">16 Topik • 4 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 02. Sistem Kelistrikan -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 02</span>
+<span class="material-symbols-outlined text-[#8F4E00]">electric_bolt</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Sistem Kelistrikan Gedung</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Transformator MV/LV (Cast Resin &amp; Oil), Genset Synchronizing, Panel LVMDP, Capacitor Bank, Cos Phi, UPS Sentral, Grounding rod (&lt; 2 Ohm), dan PUIL 2020.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">20 kV MV Panel</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">ATS/AMF</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Harmonisa</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">18 Topik • 5 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 03. Plumbing & Sistem Pompa -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 03</span>
+<span class="material-symbols-outlined text-[#0F5B8C]">water_drop</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Plumbing dan Sistem Pompa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Booster Pump variable speed drive, Transfer Pump, Deep Well, STP (Sewage Treatment Plant) aerasi/MBBR, WTP, Grease Trap, dan jaringan pipa air kotor/bekas.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Hydrophor Tank</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">BOD/COD STP</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Piping Venting</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">12 Topik • 3 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 04. Fire Protection & Fire Alarm -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 04</span>
+<span class="material-symbols-outlined text-error">local_fire_department</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Fire Protection &amp; Fire Alarm</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Main Fire Pump (Diesel, Electric, Jockey), Hydrant Pillar &amp; Box, Wet/Dry Sprinkler, Addressable MCFA, Smoke/Heat Detector, Gas Suppression FM200/Novec.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">NFPA 20 / SNI</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Flow Switch</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Jockey Pressure</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">14 Topik • 4 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 05. Building Management System (BMS) -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 05</span>
+<span class="material-symbols-outlined text-primary-container">settings_input_composite</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Building Management System (BMS)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Arsitektur DDC Controller, protokol BACnet MS/TP &amp; IP, Modbus RTU, sensor temperatur/kelembaban/CO2, aktuator valve modulasi 0-10V, dan SCADA Gedung.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">BACnet IP</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">DDC Logic</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Trend Log</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">12 Topik • 3 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 06. Transportasi Vertikal -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 06</span>
+<span class="material-symbols-outlined text-on-surface">elevator</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Transportasi Vertikal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Elevator Traksi Gearless/Geared, Safety Governor, Buffer, ARD (Automatic Rescue Device), Door Interlock Switch, Eskalator Step Chain, dan Comb Plate Safety.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Permenaker 06/2017</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Governor Brake</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">ARD System</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">10 Topik • 3 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 07. ELV & Sistem Keamanan -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 07</span>
+<span class="material-symbols-outlined text-outline">videocam</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">ELV dan Sistem Keamanan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                CCTV IP Onvif, NVR Storage Bandwidth calculation, Access Control RFID/Biometrik, Emergency Break Glass, PAVA (Public Address Voice Evac), dan Jaringan Fiber Optic.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">PAVA Intercom</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Door Strike/Maglock</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">OTDR Fiber</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">11 Topik • 3 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 08. Preventive Maintenance & Troubleshooting -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 08</span>
+<span class="material-symbols-outlined text-secondary">build_circle</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Preventive Maintenance &amp; Troubleshooting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Pembuatan Log Sheet digital, analisis vibrasi motor, inspeksi termografi inframerah panel listrik, Megger test insulasi motor, dan Root Cause Failure Analysis (RCFA).
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Thermography</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Vibration Pen</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Insulation 1000V</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">15 Topik • 5 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 09. Efisiensi Energi & Operasional -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 09</span>
+<span class="material-symbols-outlined text-[#1B6D2F]">energy_savings_leaf</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Efisiensi Energi &amp; Operasional</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Kalkulasi IKE (Intensitas Konsumsi Energi - kWh/m²/tahun), optimasi chiller plant, VFD flow staging, sensor daylight harvesting, dan audit energi standar ESDM.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">IKE Standar PU</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Chiller kW/TR</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Green Building GBCI</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">9 Topik • 2 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 10. K3, SOP, & Keselamatan Kerja -->
+<div class="bg-[#FAF7F2] border-2 border-[#BA1A1A] rounded-xl p-space-md hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-error">MODUL 10</span>
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">K3, SOP, &amp; Keselamatan Kerja</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Prosedur LOTO (Lockout / Tagout) panel tegangan menengah, K3 Ruang Terbatas (Confined Space STP), Izin Kerja Panas (Hot Work Permit), dan APD Listrik Arc-Flash.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-error-container text-on-error-container text-[10px] font-label-code px-2 py-0.5 rounded font-bold">LOTO Protocol</span>
+<span class="bg-error-container text-on-error-container text-[10px] font-label-code px-2 py-0.5 rounded font-bold">Kemenaker 12/2015</span>
+<span class="bg-error-container text-on-error-container text-[10px] font-label-code px-2 py-0.5 rounded font-bold">Working at Height</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-error font-bold">Wajib Semua Teknisi</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+<!-- 11. Sistem Khusus Fasilitas -->
+<div class="bg-[#FAF7F2] border border-[#E1D5C1] rounded-xl p-space-md hover:border-primary-container transition-all hover:shadow-[0_4px_12px_rgba(30,35,42,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-code text-headline-sm font-bold text-primary-container">MODUL 11</span>
+<span class="material-symbols-outlined text-[#0F5B8C]">hub</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Sistem Khusus Fasilitas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Pneumatic tube hospital, Medical Gas Vacuum AGSS, Precision Air Conditioner (PAC data center), Swimming Pool Filtration hotel, dan Industrial Steam Boiler.
+              </p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Gas Medis HTM 02</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">PAC DX/Chilled</span>
+<span class="bg-white border border-[#E1D5C1] text-[10px] font-label-code px-2 py-0.5 rounded">Boiler Bejana Tekan</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex items-center justify-between">
+<span class="text-xs font-label-code text-on-surface-variant">13 Topik • 4 Kuis SOP</span>
+<a class="text-xs font-bold text-primary-container hover:underline" href="#katalog">Buka Silabus →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: FITUR UNGGULAN TEKNISI (BENTO GRID) -->
+<section class="py-16 px-space-md lg:px-space-xl max-w-7xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<div class="font-label-code text-label-badge text-primary-container uppercase font-bold tracking-wider">Ergonomi Belajar &amp; Praktek Lapangan</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Dirancang Khusus untuk Alur Kerja Teknisi</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Bukan sekadar video teori; RuangTeknik mengasah daya analisis diagnosa skematik dan ketepatan penerapan SOP.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Feature 1 -->
+<div class="bg-white border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container mb-4">
+<span class="material-symbols-outlined text-[24px]">schema</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Diagram Skematik Interaktif</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Klik setiap valve, relay, atau sensor pada single line diagram (SLD) dan piping diagram untuk melihat data flow serta simulasi error code.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-[#FAF7F2] font-label-code text-xs text-primary-container font-semibold">
+            Support Touch &amp; Tablet Rugged
+          </div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-[#D2E7FF] flex items-center justify-center text-[#0F5B8C] mb-4">
+<span class="material-symbols-outlined text-[24px]">troubleshoot</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Studi Kasus Lapangan Nyata</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Simulasi skenario darurat: Trip Trafo daya saat beban puncak, kebocoran pipa riser hidran di lantai 25, hingga hunting temperatur cold room farmasi.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-[#FAF7F2] font-label-code text-xs text-primary-container font-semibold">
+            50+ Skenario Troubleshooting
+          </div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-[#D7F5D7] flex items-center justify-center text-[#1B6D2F] mb-4">
+<span class="material-symbols-outlined text-[24px]">fact_check</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Evaluasi Kuis Berpembahasan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Setiap jawaban salah dilengkapi referensi pasal PUIL 2020, SNI gedung, atau rekomendasi manual pabrikan (Carrier, Daikin, Schneider, Grundfos).
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-[#FAF7F2] font-label-code text-xs text-primary-container font-semibold">
+            Kaji Ulang Komprehensif
+          </div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-white border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container mb-4">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Log Book &amp; Sertifikat Digital</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+              Portofolio jam belajar dan riwayat praktikum terverifikasi dengan QR Code anti-pemalsuan untuk kenaikan jenjang karir teknisi gedung.
+            </p>
+</div>
+<div class="mt-4 pt-3 border-t border-[#FAF7F2] font-label-code text-xs text-primary-container font-semibold">
+            Verifikasi QR Digital BNSP
+          </div>
+</div>
+</div>
+</section>
+<!-- SECTION: K3 CALLOUT & REAL-TIME SAFETY PROCEDURES PREVIEW -->
+<section class="py-12 px-space-md lg:px-space-xl bg-[#FAF7F2] border-t border-[#E1D5C1]" id="k3-preview">
+<div class="max-w-7xl mx-auto">
+<div class="bg-white border-2 border-[#BA1A1A] rounded-xl p-6 lg:p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-error-container text-on-error-container flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="bg-[#BA1A1A] text-white text-[11px] font-label-code font-bold px-2 py-0.5 rounded tracking-wider">STANDAR WAJIB K3 NASIONAL</span>
+<span class="font-label-code text-body-sm text-on-surface-variant">SOP Darurat &amp; LOTO</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Keselamatan Nyawa Teknisi Adalah Prioritas Mutlak</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+                Setiap materi kurikulum RuangTeknik mewajibkan verifikasi langkah LOTO (Lock Out Tag Out), pengecekan Zero Voltage, dan briefing toolbox sebelum pengoperasian peralatan tegangan tinggi atau ruang terbatas.
+              </p>
+</div>
+</div>
+<a class="px-5 py-3 bg-[#BA1A1A] hover:bg-[#93000A] text-white font-title-md text-title-md rounded-lg flex items-center gap-2 flex-shrink-0 transition-colors shadow-sm" href="#katalog">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+<span>Unduh Checklist SOP K3 (PDF)</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- COMPREHENSIVE FOOTER -->
+<footer class="bg-inverse-surface text-[#EDF1FB] border-t border-outline">
+<div class="max-w-7xl mx-auto px-space-md lg:px-space-xl py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+<!-- Col 1: Brand Info -->
+<div class="lg:col-span-2 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">architecture</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-white tracking-tight">RuangTeknik</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-label-code font-bold px-1.5 py-0.5 rounded">LMS M&amp;E</span>
+</div>
+<p class="text-body-sm text-surface-variant max-w-sm">
+            Platform edukasi teknik mekanikal, elektrikal, dan plumbing gedung modern pertama di Indonesia yang mengintegrasikan standar SNI, Permenaker, dan best practice industri.
+          </p>
+<div class="text-body-sm text-outline-variant font-label-code mt-2">
+            Kantor Rekayasa: Menara Engineering Lt. 14, Kawasan Industri Pulogadung, DKI Jakarta.
+          </div>
+</div>
+<!-- Col 2: Kurikulum Modul -->
+<div>
+<div class="font-title-md text-white font-bold mb-3">Kurikulum Utama</div>
+<ul class="flex flex-col gap-2 text-body-sm text-surface-variant font-body-sm">
+<li><a class="hover:text-white transition-colors" href="#modul">HVAC &amp; Chiller Plant</a></li>
+<li><a class="hover:text-white transition-colors" href="#modul">Distribusi Trafo &amp; LVMDP</a></li>
+<li><a class="hover:text-white transition-colors" href="#modul">Pompa Booster &amp; STP WTP</a></li>
+<li><a class="hover:text-white transition-colors" href="#modul">Fire Alarm &amp; Hydrant</a></li>
+<li><a class="hover:text-white transition-colors" href="#modul">BMS &amp; Otomasi Gedung</a></li>
+<li><a class="hover:text-white transition-colors" href="#modul">Transportasi Vertikal (Lift)</a></li>
+</ul>
+</div>
+<!-- Col 3: Regulasi & Standar -->
+<div>
+<div class="font-title-md text-white font-bold mb-3">Regulasi &amp; Kode Rujukan</div>
+<ul class="flex flex-col gap-2 text-body-sm text-surface-variant font-body-sm">
+<li class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">verified</span>
+<span>PUIL 2020 (SNI 0225:2020)</span>
+</li>
+<li class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">verified</span>
+<span>SNI 03-6572 (Tata Udara Gedung)</span>
+</li>
+<li class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">verified</span>
+<span>SNI 03-3989 (Sprinkler Otomatis)</span>
+</li>
+<li class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">verified</span>
+<span>Permenaker No. 12/2015 (K3 Listrik)</span>
+</li>
+<li class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">verified</span>
+<span>Permen PUPR 14/2017 (BGH)</span>
+</li>
+</ul>
+</div>
+<!-- Col 4: Navigasi Cepat & Mode Pengguna -->
+<div>
+<div class="font-title-md text-white font-bold mb-3">Navigasi LMS</div>
+<ul class="flex flex-col gap-2 text-body-sm text-surface-variant font-body-sm mb-4">
+<li><a class="hover:text-white transition-colors" href="#mode-peserta">Portal Peserta Teknisi</a></li>
+<li><a class="hover:text-white transition-colors" href="#mode-admin">Portal Admin &amp; Instruktur</a></li>
+<li><a class="hover:text-white transition-colors" href="#jadwal">Jadwal Sertifikasi BNSP</a></li>
+<li><a class="hover:text-white transition-colors" href="#faq">Bantuan &amp; Regulasi PU</a></li>
+</ul>
+<div class="bg-tertiary-container p-2.5 rounded border border-outline text-xs">
+<div class="font-bold text-white mb-0.5">Hotline K3 M&amp;E:</div>
+<div class="font-label-code text-tertiary-fixed">0800-1-TEKNIK (Bebas Pulsa)</div>
+</div>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-8 mt-8 border-t border-outline flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-surface-variant">
+<div>
+          © 2025 RuangTeknik Indonesia. Hak Cipta Dilindungi Undang-Undang. Platform Edukasi M&amp;E Gedung.
+        </div>
+<div class="flex items-center gap-4">
+<a class="hover:underline" href="#">Kebijakan Privasi</a>
+<a class="hover:underline" href="#">Syarat Layanan</a>
+<a class="hover:underline" href="#">Pedoman K3</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

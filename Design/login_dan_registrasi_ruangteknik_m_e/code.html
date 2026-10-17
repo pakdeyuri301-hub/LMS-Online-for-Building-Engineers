@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RuangTeknik M&amp;E — Portal Autentikasi Terpadu Teknisi Gedung</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#706346",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#51452a",
+            "secondary": "#6a5d40",
+            "on-primary-container": "#ff7f7b",
+            "surface": "#f8f9ff",
+            "on-surface-variant": "#584140",
+            "tertiary-fixed": "#cfe6f6",
+            "outline": "#8b716f",
+            "inverse-surface": "#2c3138",
+            "surface-container-low": "#f0f4fd",
+            "surface-variant": "#dee2ec",
+            "surface-dim": "#d6dae4",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#ffdad7",
+            "surface-container-high": "#e4e8f2",
+            "error": "#ba1a1a",
+            "primary-container": "#790d16",
+            "error-container": "#ffdad6",
+            "on-background": "#171c23",
+            "tertiary": "#132834",
+            "tertiary-container": "#293e4b",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#410005",
+            "outline-variant": "#dfbfbd",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#f3e1bc",
+            "secondary-fixed-dim": "#d6c5a1",
+            "on-primary-fixed-variant": "#891b20",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed": "#071e2a",
+            "inverse-primary": "#ffb3af",
+            "on-tertiary-container": "#93a9b8",
+            "surface-container-highest": "#dee2ec",
+            "secondary-container": "#f3e1bc",
+            "surface-container": "#eaeef8",
+            "inverse-on-surface": "#edf1fb",
+            "tertiary-fixed-dim": "#b3c9da",
+            "surface-bright": "#f8f9ff",
+            "surface-tint": "#aa3435",
+            "on-tertiary-fixed-variant": "#354957",
+            "primary": "#540008",
+            "on-secondary-fixed": "#231a04",
+            "primary-fixed-dim": "#ffb3af",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#171c23"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "gutter": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-code": ["JetBrains Mono"],
+            "headline-xl": ["Inter"],
+            "label-badge": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "label-k3": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "display-lg": ["Inter"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-k3": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Blueprint subtle technical grid */
+    .blueprint-grid {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(174, 196, 212, 0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(174, 196, 212, 0.18) 1px, transparent 1px);
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f0f4fd;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #dfbfbd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-primary-container">
+<!-- Top Technical Header Banner (Operational Strip) -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant h-14 px-space-lg flex items-center justify-between sticky top-0 z-50">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="precision_manufacturing">precision_manufacturing</span>
+</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-primary-container tracking-tight leading-none">RuangTeknik</span>
+<span class="font-label-code text-[10px] text-secondary tracking-widest uppercase">M&amp;E ENGINEERING LMS</span>
+</div>
+</div>
+<span class="hidden md:inline-block w-px h-6 bg-outline-variant"></span>
+<div class="hidden lg:flex items-center gap-2 px-2 py-0.5 rounded bg-surface-container-low border border-outline-variant">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-label-code text-[11px] text-tertiary">STANDAR SISTEM: PU-PR 24/PRT/M/2008 &amp; PERMENAKER 12/2015</span>
+</div>
+</div>
+<!-- Right Header Metadata & Live Status -->
+<div class="flex items-center gap-space-md">
+<div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="verified">verified</span>
+<span>LSP M&amp;E Terakreditasi BNSP</span>
+</div>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-error-container text-on-error-container font-label-k3 border border-error hover:bg-error hover:text-on-error transition-colors" href="#k3-hotline">
+<span class="material-symbols-outlined text-[16px]" data-icon="emergency" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span>SOP K3 DARURAT</span>
+</a>
+</div>
+</header>
+<!-- Main Split Canvas -->
+<main class="flex-1 max-w-[1440px] w-full mx-auto p-space-md lg:p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT SIDE: Branding, Technical Blueprint Showcase & Compliance Specs (5 Cols) -->
+<section class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Primary Architectural Brand Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg blueprint-grid relative overflow-hidden">
+<!-- Technical Registration Watermark -->
+<div class="absolute right-3 top-3 font-label-code text-[10px] text-outline px-2 py-0.5 rounded bg-surface-container border border-outline-variant uppercase">
+          DIAG-M&amp;E-2025/VER-4.8
+        </div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container font-label-badge rounded border border-secondary-fixed-dim">
+              PORTAL RESMI TEKNISI FASILITAS
+            </span>
+<span class="font-label-code text-body-sm text-tertiary">LMS-BMS GATEWAY</span>
+</div>
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">
+              Pusat Pelatihan &amp; Sertifikasi M&amp;E Gedung Bertingkat
+            </h1>
+<p class="font-body-md text-on-surface-variant mt-2 leading-relaxed">
+              Platform validasi kompetensi rekayasa mekanikal, elektrikal, tata udara (HVAC), sistem proteksi kebakaran, dan plumbing berstandar keselamatan nasional.
+            </p>
+</div>
+<!-- Technical Schematic Blueprint Preview Card -->
+<div class="border border-outline-variant rounded-lg bg-surface-container-low p-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between border-b border-outline-variant pb-1.5 px-1">
+<span class="font-label-code text-[11px] font-semibold text-tertiary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary-container" data-icon="schema">schema</span>
+                SCHEMATIC: PANEL TEGANGAN RENDAH (LVMDP)
+              </span>
+<span class="font-label-code text-[11px] text-secondary">REV. 03A</span>
+</div>
+<div class="relative rounded overflow-hidden h-40 bg-tertiary flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:opacity-100 transition-opacity duration-300" data-alt="An intricate technical blueprint visualization of a modern high-rise building electrical panel distribution system with glowing cyan and amber circuit schematics. The composition features sharp architectural lines, mechanical switchgear diagrams, clean engineering notations, and industrial maroon accents under soft laboratory lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCczEpqDmRAWlYZXqu5u94nmmDVtDBrox4yM8hb2MDk_PeInvLASlqIXNDND5hwnLrKfHfR1_S4M0XSmKnRUgv5gUdu96ze9vjw6qery_3yC0gIe1kKpHKI8jg98ctjvPfroZS9R2LTiYfseG9aHFsFU3rQdydyrlbcfyZVnwpAe7n7xHqumg0v0fmGO1hPgxSuBJeeEDc28_LkIh0NH7WCkdmpQQzGlurSUtPVaaiOL1HxVgrzsduM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between text-surface-container-lowest font-label-code text-[11px] px-2 py-1 bg-tertiary/90 backdrop-blur rounded border border-tertiary-fixed-dim/30">
+<span>Interlock ATS/AMF &amp; Genset Sync</span>
+<span class="text-secondary-fixed font-bold">STATUS: SIAP UJI</span>
+</div>
+</div>
+</div>
+<!-- K3 Safety Protocol Banner (Solid Left Strip Callout) -->
+<div class="rounded-lg bg-error-container border border-error/30 p-space-md border-l-4 border-l-error flex gap-3 items-start">
+<span class="material-symbols-outlined text-error text-[24px] mt-0.5 shrink-0" data-icon="warning" data-weight="fill" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-k3 text-error uppercase">[K3 - KOMITMEN ZERO ACCIDENT]</span>
+<p class="font-body-sm text-on-surface text-xs leading-normal">
+                "Wajib memverifikasi LOTO (Lockout/Tagout) dan APD Kategori 3 sebelum mengakses modul simulasi cubicle tegangan menengah."
+              </p>
+<span class="font-label-code text-[10px] text-on-surface-variant font-medium mt-1">
+                Ref: Permenaker No. 12/2015 &amp; SNI 0225:2020 (PUIL 2020)
+              </span>
+</div>
+</div>
+<!-- Metric & Data Spec Bento Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<div class="bg-surface-container-lowest border border-outline-variant p-space-sm rounded-lg flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-[11px] text-secondary">MODUL TERVERIFIKASI</span>
+<span class="material-symbols-outlined text-[18px] text-primary-container" data-icon="library_books">library_books</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">11 Modul</span>
+<p class="font-body-sm text-on-surface-variant text-[11px]">Chiller, Panel, STP, Lift &amp; Hydrant</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-space-sm rounded-lg flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-[11px] text-secondary">TEKNISI BERSERTIFIKASI</span>
+<span class="material-symbols-outlined text-[18px] text-emerald-700" data-icon="workspace_premium" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">3.500+</span>
+<p class="font-body-sm text-on-surface-variant text-[11px]">Tercatat di Portal BNSP &amp; Kemenaker</p>
+</div>
+</div>
+</div>
+<!-- Accreditation & Facility Trust Badges -->
+<div class="border-t border-outline-variant pt-space-md flex flex-col gap-2">
+<span class="font-label-code text-[10px] text-secondary uppercase tracking-wider">Mitra Integrasi &amp; Sertifikasi Industri:</span>
+<div class="flex flex-wrap items-center gap-2 text-on-surface-variant">
+<span class="px-2.5 py-1 rounded bg-surface-container font-label-code text-[11px] border border-outline-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="domain">domain</span>
+                LSP ELEKTRONIKA &amp; ENERGI
+              </span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-label-code text-[11px] border border-outline-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="badge">badge</span>
+                ASOSIASI FACILITY INDONESIA
+              </span>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-badge border border-secondary-fixed-dim">
+                ISO 9001:2015 CERTIFIED
+              </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Guidance Field Note -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="contact_support">contact_support</span>
+</span>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Kendala Akses Akun Gedung?</span>
+<span class="font-body-sm text-on-surface-variant text-xs">Hubungi Koordinator Pelatihan Fasilitas via WhatsApp</span>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg border border-primary-container text-primary-container font-title-md text-xs hover:bg-surface-container-highest transition-colors" href="#bantuan">
+          Bantuan
+        </a>
+</div>
+</section>
+<!-- RIGHT SIDE: Authentication Form Switcher (7 Cols) -->
+<section class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm p-space-lg">
+<!-- Segmented Tab Navigation for Mode Switch -->
+<div class="flex items-center border-b border-outline-variant mb-space-lg pb-1 justify-between">
+<div class="flex items-center gap-space-md" role="tablist">
+<button class="font-title-md text-title-md text-primary-container border-b-2 border-primary-container pb-2 flex items-center gap-2 transition-all" id="tab-login" onclick="switchAuthTab('login')">
+<span class="material-symbols-outlined text-[20px]" data-icon="login">login</span>
+<span>Masuk (Login)</span>
+</button>
+<button class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface pb-2 flex items-center gap-2 transition-all" id="tab-register" onclick="switchAuthTab('register')">
+<span class="material-symbols-outlined text-[20px]" data-icon="how_to_reg">how_to_reg</span>
+<span>Daftar Akun Baru (Registrasi)</span>
+</button>
+</div>
+<span class="hidden sm:inline-block font-label-code text-[11px] text-secondary">
+            SECURE ACCESS 256-BIT
+          </span>
+</div>
+<!-- ==============================================
+             PANEL 1: LOGIN FORM
+             ============================================== -->
+<div class="flex flex-col gap-space-md" id="panel-login">
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">
+              Selamat Datang Kembali di RuangTeknik
+            </h2>
+<p class="font-body-md text-on-surface-variant text-sm">
+              Gunakan ID Personil Fasilitas atau surel resmi instansi pengelola gedung Anda.
+            </p>
+</div>
+<form class="flex flex-col gap-space-md mt-2" onsubmit="event.preventDefault();">
+<!-- Identifier Field -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface flex items-center justify-between" for="login-id">
+<span>Nomor ID Teknisi / Email Perusahaan Gedung</span>
+<span class="font-label-code text-[11px] text-secondary font-normal">Wajib diisi</span>
+</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="badge">badge</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="login-id" placeholder="misal: RT-ME-8842 atau andi@senayan-property.co.id" type="text"/>
+</div>
+<span class="font-label-code text-[11px] text-on-surface-variant">
+                Tip: Format ID teknisi diawali dengan kode "RT-ME-XXXX".
+              </span>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="login-pass">Kata Sandi Akun</label>
+<a class="font-body-sm text-primary hover:text-primary-container font-semibold transition-colors" href="#lupa-sandi">
+                  Lupa Kata Sandi?
+                </a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+<input class="w-full pl-10 pr-10 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="login-pass" placeholder="••••••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface" onclick="togglePasswordVisibility('login-pass', this)" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Field Device Session Checkbox -->
+<div class="flex items-start gap-2.5 py-1">
+<input class="mt-1 w-4 h-4 rounded text-primary-container border-outline-variant focus:ring-0 focus:ring-offset-0" id="remember-session" type="checkbox"/>
+<label class="font-body-sm text-on-surface cursor-pointer select-none" for="remember-session">
+<span class="font-medium text-on-surface">Ingat sesi saya di perangkat kerja lapangan</span>
+<span class="block text-on-surface-variant text-[11px]">Simpan token autentikasi 30 hari untuk kemudahan checklist PM harian di area tanpa sinyal kuat.</span>
+</label>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full h-11 bg-primary-container hover:bg-[#5F0B11] active:bg-[#46080D] text-on-primary font-title-md text-title-md rounded-lg flex items-center justify-center gap-2 transition-all shadow-sm active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-[20px]" data-icon="login">login</span>
+<span>Masuk ke Modul Pembelajaran</span>
+</button>
+<!-- SSO Partition Divider -->
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 font-label-code text-[11px] text-secondary uppercase bg-surface-container-lowest px-2">
+                Atau Autentikasi Korporat Gedung
+              </span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- SSO Corporate Facility Option -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<button class="w-full py-2.5 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container flex items-center justify-center gap-2 text-on-surface font-title-md text-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="corporate_fare">corporate_fare</span>
+<span>SSO Portal Fasilitas Gedung</span>
+</button>
+<button class="w-full py-2.5 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest hover:bg-surface-container flex items-center justify-center gap-2 text-on-surface font-title-md text-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="fingerprint">fingerprint</span>
+<span>BMS Cloud ActiveDirectory</span>
+</button>
+</div>
+</form>
+</div>
+<!-- ==============================================
+             PANEL 2: REGISTRATION FORM (Hidden by default)
+             ============================================== -->
+<div class="hidden flex-col gap-space-md" id="panel-register">
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">
+              Registrasi Personil Teknisi &amp; Engineering M&amp;E
+            </h2>
+<p class="font-body-md text-on-surface-variant text-sm">
+              Lengkapi data profil kompetensi untuk validasi logbook pelatihan dan penerbitan sertifikat BNSP.
+            </p>
+</div>
+<form class="flex flex-col gap-space-md mt-1" onsubmit="event.preventDefault();">
+<!-- Row 1: Full Name & Technical Title -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<div class="md:col-span-8 flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-name">Nama Lengkap &amp; Gelar Teknis</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="reg-name" placeholder="misal: Ir. Budi Hartono, S.T., IPM" type="text"/>
+<span class="font-label-code text-[11px] text-on-surface-variant">Cantumkan gelar untuk sinkronisasi e-Sertifikat.</span>
+</div>
+<div class="md:col-span-4 flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-nik">NIK / No. Reg BNSP</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-label-code text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="reg-nik" placeholder="3271xxxxxxxx0001" type="text"/>
+<span class="font-label-code text-[11px] text-on-surface-variant">16 digit angka kependudukan.</span>
+</div>
+</div>
+<!-- Row 2: Facility Type & Technical Role -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-facility">Jenis Fasilitas Gedung yang Dikelola</label>
+<div class="relative">
+<select class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all appearance-none cursor-pointer" id="reg-facility">
+<option disabled="" selected="" value="">Pilih Klasifikasi Gedung...</option>
+<option value="rumahsakit">Rumah Sakit (Critical Medical Power &amp; HVAC)</option>
+<option value="hotel">Hotel Berbintang (Hospitality &amp; Boiler Systems)</option>
+<option value="datacenter">Data Center (Tier III/IV UPS &amp; Precision Cooling)</option>
+<option value="mal">Pusat Perbelanjaan / Mal (High Traffic HVAC &amp; Escalator)</option>
+<option value="kantor">Gedung Perkantoran Bertingkat Tinggi</option>
+<option value="pabrik">Pabrik &amp; Kawasan Industri Manufaktur</option>
+<option value="apartemen">Kondominium / Apartemen Residensial</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-role">Peran Teknisi / Tanggung Jawab</label>
+<div class="relative">
+<select class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all appearance-none cursor-pointer" id="reg-role">
+<option disabled="" selected="" value="">Pilih Tingkat Jabatan Teknis...</option>
+<option value="junior">Junior Technician (Pelaksana Lapangan)</option>
+<option value="supervisor">Facility Supervisor (Pengawas Shift &amp; K3)</option>
+<option value="chief">Chief Engineer (Kepala Rekayasa &amp; Energi)</option>
+<option value="admin">Admin Fasilitas &amp; Maintenance Planner</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="engineering">engineering</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3: Communication Channels (Email & WhatsApp) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-email">Email Perusahaan / Pribadi</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="mail">mail</span>
+</div>
+<input class="w-full pl-9 pr-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="reg-email" placeholder="teknisi@holding-properti.id" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-wa">Nomor WhatsApp Aktif</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="phone_iphone">phone_iphone</span>
+</div>
+<input class="w-full pl-9 pr-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-label-code text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="reg-wa" placeholder="0812-xxxx-xxxx" type="tel"/>
+</div>
+<span class="font-label-code text-[11px] text-on-surface-variant">Untuk notifikasi jadwal ujian praktik &amp; reminder Preventive Maintenance (PM).</span>
+</div>
+</div>
+<!-- Row 4: Password Formulation -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-pass">Kata Sandi Baru</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="reg-pass" placeholder="Min. 8 karakter kombinasi" type="password"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-body-md font-semibold text-on-surface" for="reg-pass-confirm">Konfirmasi Sandi</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:border-primary-container focus:ring-0 focus:outline-none transition-all" id="reg-pass-confirm" placeholder="Ketik ulang kata sandi" type="password"/>
+</div>
+</div>
+<!-- K3 Ethics & Safety Code Agreement Box -->
+<div class="p-space-md rounded-lg bg-surface-container border border-outline-variant flex flex-col gap-2">
+<div class="flex items-start gap-2.5">
+<input class="mt-1 w-4 h-4 rounded text-primary-container border-outline-variant focus:ring-0" id="agree-ethics" type="checkbox"/>
+<label class="font-body-sm text-on-surface cursor-pointer select-none" for="agree-ethics">
+<span class="font-semibold text-primary-container">Saya Menyatakan Tunduk pada Kode Etik Keselamatan Kerja Listrik &amp; Mekanikal:</span>
+<span class="block text-on-surface-variant text-[11px] mt-0.5 leading-relaxed">
+                    Menjunjung standar zero tolerance atas bypassing sistem proteksi, menerapkan LOTO saat maintenance gardu trafo, menggunakan APD tahan api Arc Flash bila diinstruksikan, dan menyetujui seluruh ketentuan privasi data teknis fasilitas binaan.
+                  </span>
+</label>
+</div>
+</div>
+<!-- Submit Registration Button -->
+<button class="w-full h-11 bg-primary-container hover:bg-[#5F0B11] active:bg-[#46080D] text-on-primary font-title-md text-title-md rounded-lg flex items-center justify-center gap-2 transition-all shadow-sm active:scale-[0.99] mt-1" type="submit">
+<span class="material-symbols-outlined text-[20px]" data-icon="app_registration">app_registration</span>
+<span>Daftarkan Akun &amp; Ajukan Verifikasi BNSP</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Quick Operational Guidance Badges Card -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-[20px]" data-icon="bolt">bolt</span>
+<div class="flex flex-col">
+<span class="font-label-code text-[11px] font-bold text-on-surface">PUIL 2020 SNI</span>
+<span class="font-body-sm text-on-surface-variant text-[10px]">Standar Instalasi Rendah/Tinggi</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-700 text-[20px]" data-icon="air">air</span>
+<div class="flex flex-col">
+<span class="font-label-code text-[11px] font-bold text-on-surface">ASHRAE 90.1</span>
+<span class="font-body-sm text-on-surface-variant text-[10px]">Efisiensi Energi Sistem Chiller</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]" data-icon="local_fire_department">local_fire_department</span>
+<div class="flex flex-col">
+<span class="font-label-code text-[11px] font-bold text-on-surface">NFPA 20 / 72</span>
+<span class="font-body-sm text-on-surface-variant text-[10px]">Fire Pump &amp; Alarm Gedung</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Technical Footer (Compliance, Hotline & ISO Certification) -->
+<footer class="mt-auto w-full bg-surface-container-lowest border-t border-outline-variant py-space-md px-space-lg" id="k3-hotline">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-xs">
+<!-- Left: ISO & Server Infrastructure Status -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px] text-emerald-600" data-icon="lock_open">lock_open</span>
+<span class="font-label-code text-[11px]">ISO/IEC 27001:2022 Verified Data Center Infrastructure</span>
+</div>
+<span class="hidden sm:inline-block text-outline-variant">•</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="dns">dns</span>
+<span class="font-label-code text-[11px]">Cluster Cloud Server: ID-JKT-TIER-4 (99.98% SLA)</span>
+</div>
+</div>
+<!-- Right: K3 Hotline & Copyright -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-error-container/50 border border-error/30 text-error">
+<span class="material-symbols-outlined text-[16px]" data-icon="fmd_bad">fmd_bad</span>
+<span class="font-label-code text-[11px] font-bold">HOTLINE K3 DISNAKER: (021) 525-5650 ext. 240</span>
+</div>
+<span class="text-on-surface-variant font-label-code text-[11px]">
+          © 2025 RuangTeknik LMS M&amp;E Indonesia.
+        </span>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions Script for Tab & Password Toggle -->
+<script>
+    function switchAuthTab(targetTab) {
+      const tabLogin = document.getElementById('tab-login');
+      const tabRegister = document.getElementById('tab-register');
+      const panelLogin = document.getElementById('panel-login');
+      const panelRegister = document.getElementById('panel-register');
+
+      if (targetTab === 'login') {
+        // Tab styling
+        tabLogin.className = "font-title-md text-title-md text-primary-container border-b-2 border-primary-container pb-2 flex items-center gap-2 transition-all";
+        tabRegister.className = "font-title-md text-title-md text-on-surface-variant hover:text-on-surface pb-2 flex items-center gap-2 transition-all";
+        
+        // Panel toggle
+        panelLogin.classList.remove('hidden');
+        panelLogin.classList.add('flex');
+        panelRegister.classList.add('hidden');
+        panelRegister.classList.remove('flex');
+      } else {
+        // Tab styling
+        tabRegister.className = "font-title-md text-title-md text-primary-container border-b-2 border-primary-container pb-2 flex items-center gap-2 transition-all";
+        tabLogin.className = "font-title-md text-title-md text-on-surface-variant hover:text-on-surface pb-2 flex items-center gap-2 transition-all";
+        
+        // Panel toggle
+        panelRegister.classList.remove('hidden');
+        panelRegister.classList.add('flex');
+        panelLogin.classList.add('hidden');
+        panelLogin.classList.remove('flex');
+      }
+    }
+
+    function togglePasswordVisibility(inputId, btnElement) {
+      const input = document.getElementById(inputId);
+      const icon = btnElement.querySelector('.material-symbols-outlined');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        input.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+  </script>
+</body></html>

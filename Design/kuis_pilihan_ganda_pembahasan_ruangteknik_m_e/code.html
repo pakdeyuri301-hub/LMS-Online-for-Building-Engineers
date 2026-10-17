@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kuis Evaluasi Modul HVAC &amp; Kelistrikan Gedung - RuangTeknik</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#8b716f",
+            "surface-variant": "#dee2ec",
+            "tertiary-fixed-dim": "#b3c9da",
+            "secondary-fixed": "#f3e1bc",
+            "surface-container-highest": "#dee2ec",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#293e4b",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#231a04",
+            "on-surface-variant": "#584140",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#f3e1bc",
+            "on-secondary-container": "#706346",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#071e2a",
+            "on-primary-container": "#ff7f7b",
+            "tertiary": "#132834",
+            "error-container": "#ffdad6",
+            "on-surface": "#171c23",
+            "on-tertiary-container": "#93a9b8",
+            "inverse-on-surface": "#edf1fb",
+            "primary": "#540008",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#aa3435",
+            "outline-variant": "#dfbfbd",
+            "inverse-surface": "#2c3138",
+            "primary-container": "#790d16",
+            "primary-fixed": "#ffdad7",
+            "surface-container": "#eaeef8",
+            "surface-container-low": "#f0f4fd",
+            "inverse-primary": "#ffb3af",
+            "on-tertiary-fixed-variant": "#354957",
+            "on-primary-fixed-variant": "#891b20",
+            "primary-fixed-dim": "#ffb3af",
+            "secondary": "#6a5d40",
+            "surface-dim": "#d6dae4",
+            "surface-container-high": "#e4e8f2",
+            "on-primary-fixed": "#410005",
+            "surface-bright": "#f8f9ff",
+            "on-background": "#171c23",
+            "background": "#f8f9ff",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#51452a",
+            "tertiary-fixed": "#cfe6f6",
+            "surface": "#f8f9ff",
+            "secondary-fixed-dim": "#d6c5a1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "0.75rem",
+            "margin": "2rem",
+            "space-md": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Inter"],
+            "label-code": ["JetBrains Mono"],
+            "headline-md": ["Inter"],
+            "label-k3": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "headline-xl": ["Inter"],
+            "label-badge": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "title-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-k3": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#F5EFE1] text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- Top Navigation & Assessment Header -->
+<header class="w-full bg-surface-container-lowest border-b border-[#E1D5C1] sticky top-0 z-40 shadow-sm">
+<div class="max-w-7xl mx-auto px-space-md lg:px-space-lg h-16 flex items-center justify-between gap-space-md">
+<!-- Brand & Assessment Title Cluster -->
+<div class="flex items-center gap-space-md min-w-0">
+<div class="flex items-center gap-2 pr-4 border-r border-[#E1D5C1]">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container tracking-tight">RuangTeknik</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-badge text-label-badge bg-[#E5D3AF] text-secondary font-bold px-1.5 py-0.5 rounded">MODUL 01</span>
+<h1 class="font-title-md text-title-md text-on-surface font-bold truncate">Kuis Evaluasi Modul 01: HVAC &amp; Refrigerasi Gedung Komersial</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Standar Asesmen Kompetensi M&amp;E Rumah Sakit &amp; Fasilitas Publik</p>
+</div>
+</div>
+<!-- Live Countdown & Critical Metrics Cluster -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- Countdown Clock -->
+<div class="flex items-center gap-2 bg-[#FAF7F2] border border-[#E1D5C1] px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary-container text-lg animate-pulse" style="font-variation-settings: 'FILL' 1;">timer</span>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-wider text-on-surface-variant">Sisa Waktu</span>
+<span class="font-label-code text-label-code text-primary-container font-bold tracking-wider" id="countdown">18:45</span>
+</div>
+</div>
+<!-- Passing Grade Badge -->
+<div class="hidden sm:flex items-center gap-1.5 bg-[#FAF7F2] border border-[#D5C8B2] px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[#8F4E00] text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div class="flex flex-col text-left">
+<span class="text-[10px] uppercase font-bold tracking-wider text-secondary">Standar KKM</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">Min. 80 (PU/K3)</span>
+</div>
+</div>
+<!-- Submit Evaluation CTA -->
+<button class="bg-primary-container hover:bg-[#5F0B11] active:bg-[#46080D] text-white px-4 py-2 rounded-lg font-title-md text-title-md font-semibold flex items-center gap-1.5 shadow-sm transition-all duration-150">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span class="hidden md:inline">Kirim Jawaban</span>
+<span class="md:hidden">Selesai</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Blueprint Workspace -->
+<main class="flex-1 max-w-7xl w-full mx-auto p-space-md lg:p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Kolom Kiri: Soal Aktif, Pilihan Ganda & Pembahasan (8 Kolom) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Technical Case Study Card -->
+<section class="bg-white border border-[#E1D5C1] rounded-2xl p-space-lg shadow-sm">
+<!-- Question Meta Header -->
+<div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-[#F0E6D5]">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code bg-primary-container text-white px-2.5 py-1 rounded font-bold">SOAL #04</span>
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase tracking-wider font-semibold">Troubleshooting &amp; Analisa Tekanan Siklus Freon</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code text-secondary">Bobot: 10 Poin</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="font-label-code text-label-code text-primary-container font-semibold">Wajib Terisi</span>
+</div>
+</div>
+<!-- Realistic Field Diagnostic Narrative -->
+<div class="mt-space-md">
+<div class="flex items-start gap-2 mb-3 bg-[#FAF7F2] p-3 rounded-lg border border-[#E1D5C1]">
+<span class="material-symbols-outlined text-secondary text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<div class="text-sm">
+<span class="font-label-code text-label-code font-bold text-on-surface">Konteks Operasional:</span>
+<span class="font-body-md text-body-md text-on-surface-variant ml-1">Chiller Centrifugal Plant Gedung Rawat Inap (12 Lantai) - Media Refrigerant HFC R-134a</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+            Pada saat inspeksi rutin chiller <span class="font-semibold text-primary">water-cooled berpendingin R-134a</span> di gedung rumah sakit bertingkat 12, teknisi menemukan suhu <em>chilled water keluar (leaving water)</em> naik menjadi <span class="font-label-code text-label-code font-bold text-error">11.5°C</span> (setpoint normal 7.0°C). Tekanan hisap <em>(suction pressure)</em> terbaca jauh di bawah normal (<span class="font-label-code text-label-code font-bold text-error">18 psig</span>), sedangkan <em>discharge superheat</em> sangat tinggi. Dari indikator <em>sight glass</em> terlihat gelembung busa terus menerus. Apa akar penyebab <em>(root cause)</em> paling mungkin dan tindakan pertama SOP K3 yang harus dilakukan?
+          </p>
+</div>
+<!-- Multiple Choice Options Interactive Form -->
+<fieldset class="mt-space-lg flex flex-col gap-3">
+<legend class="sr-only">Pilihan Jawaban Soal 04</legend>
+<!-- Opsi A -->
+<label class="group relative flex items-start gap-3.5 p-3.5 rounded-xl border border-[#E1D5C1] bg-[#FAF7F2] hover:bg-white hover:border-[#AEC4D4] transition-all cursor-pointer">
+<div class="flex items-center h-6">
+<input class="w-4 h-4 text-primary-container border-gray-300 focus:ring-primary-container cursor-pointer" name="soal_04" type="radio" value="A"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code font-bold text-on-surface-variant">A.</span>
+<span class="font-body-md text-body-md text-on-surface">Kondensor tersumbat kerak <em>(fouling)</em> — Lakukan descaling kimiawi pipa kondensor tanpa mematikan sirkulasi air pendingin.</span>
+</div>
+</div>
+</label>
+<!-- Opsi B (Selected & Correct State) -->
+<label class="relative flex items-start gap-3.5 p-3.5 rounded-xl border-2 border-primary-container bg-[#FFF8F7] transition-all cursor-pointer shadow-sm">
+<div class="flex items-center h-6">
+<input checked="" class="w-4 h-4 text-primary-container border-primary-container focus:ring-primary-container cursor-pointer" name="soal_04" type="radio" value="B"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code font-bold text-primary-container">B.</span>
+<span class="font-body-md text-body-md font-semibold text-primary">Terjadi kebocoran refrigerant <em>(undercharge)</em> — Hentikan kompresor, pasang tagout K3, dan lakukan leak detection dengan nitrogen &amp; electronic sniffer.</span>
+</div>
+<span class="material-symbols-outlined text-[#1B6D2F] text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="mt-1 flex items-center gap-2">
+<span class="font-label-badge text-label-badge bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] px-2 py-0.5 rounded font-bold">PILIHAN ANDA • JAWABAN BENAR</span>
+</div>
+</div>
+</label>
+<!-- Opsi C -->
+<label class="group relative flex items-start gap-3.5 p-3.5 rounded-xl border border-[#E1D5C1] bg-[#FAF7F2] hover:bg-white hover:border-[#AEC4D4] transition-all cursor-pointer">
+<div class="flex items-center h-6">
+<input class="w-4 h-4 text-primary-container border-gray-300 focus:ring-primary-container cursor-pointer" name="soal_04" type="radio" value="C"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code font-bold text-on-surface-variant">C.</span>
+<span class="font-body-md text-body-md text-on-surface">Aliran pompa air es <em>(primary chilled water pump)</em> mati — Reset overload relay kontaktor dan paksa kompresor tetap beroperasi.</span>
+</div>
+</div>
+</label>
+<!-- Opsi D -->
+<label class="group relative flex items-start gap-3.5 p-3.5 rounded-xl border border-[#E1D5C1] bg-[#FAF7F2] hover:bg-white hover:border-[#AEC4D4] transition-all cursor-pointer">
+<div class="flex items-center h-6">
+<input class="w-4 h-4 text-primary-container border-gray-300 focus:ring-primary-container cursor-pointer" name="soal_04" type="radio" value="D"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code font-bold text-on-surface-variant">D.</span>
+<span class="font-body-md text-body-md text-on-surface">Oli pelumas kompresor tercampur air — Drain oli secara manual dan ganti <em>filter dryer core</em> secara langsung tanpa recovery freon.</span>
+</div>
+</div>
+</label>
+</fieldset>
+<!-- K3 Operational Warning Box -->
+<div class="mt-space-lg p-3.5 rounded-xl bg-[#FFE088] border-l-4 border-[#8F4E00] flex items-start gap-3">
+<span class="material-symbols-outlined text-[#8F4E00] text-xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="text-xs leading-relaxed text-[#2A1700]">
+<span class="font-label-k3 text-label-k3 font-bold uppercase tracking-wider">[K3 - PERINGATAN TEKNIS]:</span>
+            Dilarang melakukan penambahan refrigerant secara langsung (top-up) ke dalam sistem bertekanan sebelum sumber kebocoran diperbaiki tuntas dan uji vakum <span class="font-label-code text-label-code font-bold">500 micron</span> tercapai sesuai SNI 03-6390-2020.
+          </div>
+</div>
+</section>
+<!-- Comprehensive Explanatory Breakdown Card -->
+<section class="bg-white border border-[#E1D5C1] rounded-2xl p-space-lg shadow-sm">
+<!-- Explanation Header & Status -->
+<div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#F0E6D5]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">menu_book</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Pembahasan Teknis Rekayasa Termodinamika</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-badge text-label-badge bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] px-2.5 py-1 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+              Jawaban Anda Benar (Skor +10)
+            </span>
+</div>
+</div>
+<!-- Thermodynamic Principle Text -->
+<div class="mt-4 space-y-3">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+<strong class="text-primary font-semibold">Prinsip Fisika &amp; Sirkulasi Freon:</strong> Tekanan hisap <em>(suction pressure)</em> yang anjlok ke <strong>18 psig</strong> (kondisi normal R-134a: ~34 - 38 psig pada evaporasi 4.4°C) disertai superheat tinggi pada jalur keluar evaporator dan timbulnya <em>continuous bubbling</em> pada <em>sight glass</em> cairan menandakan densitas massa refrigerant yang bersirkulasi tidak mencukupi <em>(undercharge mass flow)</em>.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface font-semibold">Prosedur SOP PU &amp; K3 No. 05/2018:</strong> Sesuai instruksi kerja teknisi HVAC Gedung, kompresor wajib dipadamkan segera melalui <em>Emergency Lockout/Tagout (LOTO)</em> untuk mencegah gesekan kering <em>(dry friction)</em> pada rotor bantalan akibat kegagalan pengembalian oli <em>(oil return failure)</em>. Deteksi kebocoran menggunakan <em>inert gas (dry nitrogen)</em> bertekanan bertahap dengan sensor halogen/sniffer elektronik.
+          </p>
+</div>
+<!-- Parametric Engineering Verification Table -->
+<div class="mt-space-lg overflow-x-auto rounded-xl border border-[#E1D5C1]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#E5D3AF] bg-opacity-35 border-b border-[#E1D5C1]">
+<th class="py-2.5 px-3 font-title-md text-xs font-bold text-secondary uppercase tracking-wider">Parameter Diagnostik</th>
+<th class="py-2.5 px-3 font-title-md text-xs font-bold text-secondary uppercase tracking-wider">Nilai Lapangan (Kasus)</th>
+<th class="py-2.5 px-3 font-title-md text-xs font-bold text-secondary uppercase tracking-wider">Standar R-134a Optimal</th>
+<th class="py-2.5 px-3 font-title-md text-xs font-bold text-secondary uppercase tracking-wider text-right">Analisa Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E1D5C1] font-body-sm text-body-sm">
+<tr class="bg-white">
+<td class="py-2 px-3 font-medium text-on-surface">Suction Pressure (Psig)</td>
+<td class="py-2 px-3 font-label-code text-label-code text-error font-bold">18.0 psig</td>
+<td class="py-2 px-3 font-label-code text-label-code text-on-surface-variant">34.0 - 38.0 psig</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-[#FFDAD6] text-[#93000A]">Kritis Rendah</span>
+</td>
+</tr>
+<tr class="bg-[#FAF7F2]">
+<td class="py-2 px-3 font-medium text-on-surface">Leaving Chilled Water Temp</td>
+<td class="py-2 px-3 font-label-code text-label-code text-error font-bold">11.5 °C</td>
+<td class="py-2 px-3 font-label-code text-label-code text-on-surface-variant">6.7 - 7.2 °C</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-[#FFDAD6] text-[#93000A]">Under-Cooling</span>
+</td>
+</tr>
+<tr class="bg-white">
+<td class="py-2 px-3 font-medium text-on-surface">Suction Superheat</td>
+<td class="py-2 px-3 font-label-code text-label-code text-error font-bold">22.4 °F</td>
+<td class="py-2 px-3 font-label-code text-label-code text-on-surface-variant">8.0 - 12.0 °F</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-[#FFE088] text-[#8F4E00]">Starving Evaporator</span>
+</td>
+</tr>
+<tr class="bg-[#FAF7F2]">
+<td class="py-2 px-3 font-medium text-on-surface">Sight Glass Condition</td>
+<td class="py-2 px-3 font-body-sm text-body-sm text-error font-semibold">Busa Berkelanjutan</td>
+<td class="py-2 px-3 font-body-sm text-body-sm text-on-surface-variant">Bening (Solid Liquid)</td>
+<td class="py-2 px-3 text-right">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-[#FFDAD6] text-[#93000A]">Undercharge Leak</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Action & Bottom Navigation Bar -->
+<footer class="bg-white border border-[#E1D5C1] rounded-2xl p-space-md flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm">
+<button class="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-[#790D16] text-[#790D16] hover:bg-[#F5EFE1] font-title-md text-title-md font-semibold flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+<span>Sebelumnya (Soal 03)</span>
+</button>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-[#D5C8B2] text-secondary hover:bg-[#FAF7F2] font-title-md text-title-md font-medium flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-lg text-[#8F4E00]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+<span>Ragu-ragu (Beri Tanda)</span>
+</button>
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-primary-container hover:bg-[#5F0B11] text-white font-title-md text-title-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-all">
+<span>Soal Berikutnya (Soal 05)</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</footer>
+</div>
+<!-- Kolom Kanan: Navigasi Nomor Soal, Indikator Status & SOP K3 (4 Kolom) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Question Grid & Progress Panel -->
+<div class="bg-white border border-[#E1D5C1] rounded-2xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-[#F0E6D5]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-xl">grid_view</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Navigasi Soal</h3>
+</div>
+<span class="font-label-code text-label-code bg-[#FAF7F2] border border-[#E1D5C1] px-2 py-0.5 rounded text-on-surface-variant font-bold">15 Butir</span>
+</div>
+<!-- Real-time Progress Counters -->
+<div class="grid grid-cols-3 gap-2 my-4 text-center">
+<div class="p-2.5 rounded-xl bg-[#FAF7F2] border border-[#E1D5C1]">
+<span class="block font-label-code text-headline-sm font-bold text-[#1B6D2F]">4</span>
+<span class="text-[11px] font-semibold text-secondary uppercase">Terjawab</span>
+</div>
+<div class="p-2.5 rounded-xl bg-[#FAF7F2] border border-[#E1D5C1]">
+<span class="block font-label-code text-headline-sm font-bold text-[#8F4E00]">1</span>
+<span class="text-[11px] font-semibold text-secondary uppercase">Ragu-ragu</span>
+</div>
+<div class="p-2.5 rounded-xl bg-[#FAF7F2] border border-[#E1D5C1]">
+<span class="block font-label-code text-headline-sm font-bold text-outline">10</span>
+<span class="text-[11px] font-semibold text-secondary uppercase">Sisa</span>
+</div>
+</div>
+<!-- 1-15 Question Number Grid -->
+<div class="grid grid-cols-5 gap-2.5 pt-2">
+<!-- Soal 1 (Terjawab - Hijau) -->
+<button class="h-10 rounded-lg bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] font-label-code text-label-code font-bold flex items-center justify-center relative hover:scale-105 transition-transform" title="Soal 01: Terjawab">
+            01
+            <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#1B6D2F]"></span>
+</button>
+<!-- Soal 2 (Terjawab - Hijau) -->
+<button class="h-10 rounded-lg bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] font-label-code text-label-code font-bold flex items-center justify-center relative hover:scale-105 transition-transform" title="Soal 02: Terjawab">
+            02
+            <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#1B6D2F]"></span>
+</button>
+<!-- Soal 3 (Ragu-ragu - Kuning) -->
+<button class="h-10 rounded-lg bg-[#FFE088] text-[#8F4E00] border border-[#E5D3AF] font-label-code text-label-code font-bold flex items-center justify-center relative hover:scale-105 transition-transform" title="Soal 03: Ragu-ragu">
+            03
+            <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#8F4E00]"></span>
+</button>
+<!-- Soal 4 (Aktif Saat Ini - Maroon Outline/Strip) -->
+<button class="h-10 rounded-lg bg-primary-container text-white border-2 border-primary ring-2 ring-primary-fixed-dim font-label-code text-label-code font-bold flex items-center justify-center relative shadow-sm scale-105" title="Soal 04: Sedang Dikerjakan">
+            04
+            <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-container"></span>
+</span>
+</button>
+<!-- Soal 5 (Terjawab - Hijau) -->
+<button class="h-10 rounded-lg bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] font-label-code text-label-code font-bold flex items-center justify-center relative hover:scale-105 transition-transform" title="Soal 05: Terjawab">
+            05
+            <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#1B6D2F]"></span>
+</button>
+<!-- Soal 6 s/d 15 (Belum Terjawab - Abu-Abu Standar) -->
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">06</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">07</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">08</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">09</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">10</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">11</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">12</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">13</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">14</button>
+<button class="h-10 rounded-lg bg-[#FAF7F2] text-on-surface-variant border border-[#E1D5C1] font-label-code text-label-code font-semibold hover:border-outline hover:bg-white transition-colors">15</button>
+</div>
+<!-- Legend -->
+<div class="mt-space-md pt-3 border-t border-[#F0E6D5] grid grid-cols-2 gap-2 text-xs">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-[#D7F5D7] border border-[#A3E2A3]"></span>
+<span class="text-on-surface-variant">Terjawab (Benar)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-primary-container"></span>
+<span class="text-on-surface-variant">Sedang Aktif</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-[#FFE088] border border-[#8F4E00]"></span>
+<span class="text-on-surface-variant">Ragu-ragu</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded bg-[#FAF7F2] border border-[#E1D5C1]"></span>
+<span class="text-on-surface-variant">Belum Dijawab</span>
+</div>
+</div>
+<!-- Target Pass Indicator -->
+<div class="mt-4 p-3 rounded-xl bg-[#FAF7F2] border border-[#E1D5C1] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">military_tech</span>
+<div>
+<div class="text-xs font-bold text-on-surface">Target Kelulusan</div>
+<div class="text-[11px] text-on-surface-variant">Minimal 12 dari 15 Soal Benar</div>
+</div>
+</div>
+<span class="font-label-code text-label-code font-bold text-primary-container">80% KKM</span>
+</div>
+</div>
+<!-- BNSP Certification Protocol Card -->
+<div class="bg-white border border-[#E1D5C1] rounded-2xl p-space-md shadow-sm">
+<div class="flex items-center gap-2 pb-2.5 border-b border-[#F0E6D5]">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Tata Tertib Asesmen BNSP</h4>
+</div>
+<ul class="mt-3 space-y-2 text-xs text-on-surface-variant">
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">check_small</span>
+<span>Ujian tersinkronisasi otomatis dengan server LSP M&amp;E RuangTeknik setiap 60 detik.</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">check_small</span>
+<span>Dilarang menutup tab browser sebelum menekan tombol <strong>Kirim Jawaban</strong>.</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm shrink-0 mt-0.5">check_small</span>
+<span>Jawaban ragu-ragu tetap dinilai jika waktu asesmen telah habis.</span>
+</li>
+</ul>
+</div>
+<!-- K3 Emergency Quick Access SOP -->
+<div class="bg-[#FFF8F7] border border-outline-variant rounded-2xl p-space-md">
+<div class="flex items-center justify-between pb-2">
+<span class="font-label-k3 text-label-k3 text-error uppercase font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">shield</span>
+            SOP Darurat K3 Chiller Room
+          </span>
+<span class="font-label-code text-[11px] text-error font-semibold">PU-K3-09</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+          Bila terjadi kebocoran masif gas refrigerant di ruang tertutup <em>(machinery room)</em>: Nyalakan <strong>exhaust fan darurat</strong>, kenakan SCBA (Self-Contained Breathing Apparatus), dan evakuasi seluruh personil.
+        </p>
+<div class="mt-3 pt-2.5 border-t border-[#F0D5D3] flex items-center justify-between text-xs">
+<span class="text-secondary font-medium">Pengawas K3 Gedung:</span>
+<span class="font-label-code text-label-code font-bold text-primary-container">Ext. 204 / 205</span>
+</div>
+</div>
+</aside>
+</main>
+<!-- Lightweight Countdown Script -->
+<script>
+    (function() {
+      let duration = 18 * 60 + 45; // 18 menit 45 detik
+      const display = document.getElementById('countdown');
+      
+      const timer = setInterval(() => {
+        if (duration <= 0) {
+          clearInterval(timer);
+          if (display) display.textContent = "00:00";
+          return;
+        }
+        duration--;
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
+        if (display) {
+          display.textContent = 
+            (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+            (seconds < 10 ? "0" + seconds : seconds);
+        }
+      }, 1000);
+    })();
+  </script>
+</body></html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RuangTeknik M&amp;E - Progres Belajar &amp; Logbook Teknisi</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter & JetBrains Mono Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#706346",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#51452a",
+            "secondary": "#6a5d40",
+            "on-primary-container": "#ff7f7b",
+            "surface": "#f8f9ff",
+            "on-surface-variant": "#584140",
+            "tertiary-fixed": "#cfe6f6",
+            "outline": "#8b716f",
+            "inverse-surface": "#2c3138",
+            "surface-container-low": "#f0f4fd",
+            "surface-variant": "#dee2ec",
+            "surface-dim": "#d6dae4",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#ffdad7",
+            "surface-container-high": "#e4e8f2",
+            "error": "#ba1a1a",
+            "primary-container": "#790d16",
+            "error-container": "#ffdad6",
+            "on-background": "#171c23",
+            "tertiary": "#132834",
+            "tertiary-container": "#293e4b",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#410005",
+            "outline-variant": "#dfbfbd",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#f3e1bc",
+            "secondary-fixed-dim": "#d6c5a1",
+            "on-primary-fixed-variant": "#891b20",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed": "#071e2a",
+            "inverse-primary": "#ffb3af",
+            "on-tertiary-container": "#93a9b8",
+            "surface-container-highest": "#dee2ec",
+            "secondary-container": "#f3e1bc",
+            "surface-container": "#eaeef8",
+            "inverse-on-surface": "#edf1fb",
+            "tertiary-fixed-dim": "#b3c9da",
+            "surface-bright": "#f8f9ff",
+            "surface-tint": "#aa3435",
+            "on-tertiary-fixed-variant": "#354957",
+            "primary": "#540008",
+            "on-secondary-fixed": "#231a04",
+            "primary-fixed-dim": "#ffb3af",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#171c23"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "gutter": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-code": ["JetBrains Mono"],
+            "headline-xl": ["Inter"],
+            "label-badge": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "label-k3": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "display-lg": ["Inter"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-k3": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-fixed selection:text-primary">
+<!-- TOP APP BAR (Shared Component) -->
+<header class="w-full px-space-lg h-16 flex items-center justify-between sticky top-0 z-40 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl" data-icon="domain">domain</span>
+<span class="font-headline-md text-headline-md font-bold text-primary-container dark:text-inverse-primary tracking-tight">RuangTeknik</span>
+</div>
+<!-- Search Bar on Left -->
+<div class="relative hidden lg:block w-72">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container" placeholder="Cari SOP, Modul M&amp;E, K3..." type="text"/>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-space-md ml-space-sm">
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-surface-bright pb-1 hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-primary-container dark:hover:text-inverse-primary transition-colors duration-150" href="#">Katalog Modul</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-surface-bright pb-1 hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-primary-container dark:hover:text-inverse-primary transition-colors duration-150" href="#">Standar SOP &amp; K3</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-body-md hover:text-on-surface dark:hover:text-surface-bright pb-1 hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-primary-container dark:hover:text-inverse-primary transition-colors duration-150" href="#">Jadwal Pelatihan</a>
+</nav>
+</div>
+<!-- Trailing Actions & User Profile -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<button class="p-2 text-on-surface-variant hover:text-primary-container rounded-lg hover:bg-surface-container transition-colors duration-150" title="Notifikasi">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary-container rounded-lg hover:bg-surface-container transition-colors duration-150" title="Bantuan Teknis">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 border border-outline-variant rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="engineering">engineering</span>
+<span>Mode Peserta</span>
+</button>
+<button class="hidden sm:inline-flex items-center px-3 py-1.5 bg-primary-container text-on-primary rounded-lg font-body-sm text-body-sm hover:bg-primary transition-colors">
+        Beralih ke Admin
+      </button>
+<div class="flex items-center gap-space-sm pl-space-xs">
+<img alt="Foto Profil Teknisi M&amp;E Gedung" class="w-9 h-9 rounded-full object-cover border border-outline-variant" data-alt="Close-up portrait of an Indonesian professional mechanical and electrical building technician wearing a safety helmet and industrial navy uniform in a crisp, clean indoor utility room with high-key lighting and warm technical drafting ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMNo32eekUPEmJto_kiirAmqZX-MlorVVk4VOn9W2ZZU36BL8ON7e-4pz_glkW3WCkRdVR0XjOiTtj4wt-QBdjdmZra-owZdpARA81bCIClBIbJTSlp4acmsByGukfEq2H8VYlbCXcaylFPpaJRfuoBZn6fAtDN65TyoYLIs78tnE3y0pqKVxNqT7LqTLeBPCfRu94_qxyImKx4QZUPi4gyKwLOiZtbzAyUBN8ajHBhfodaDrN6Tdb"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- SIDEBAR NAVIGATION (Shared Component) -->
+<aside class="fixed left-0 top-16 bottom-0 w-72 flex flex-col p-space-md overflow-y-auto z-30 bg-surface-container-low dark:bg-tertiary border-r border-outline-variant dark:border-outline">
+<!-- Rail Header -->
+<div class="pb-space-md border-b border-outline-variant mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-xl" data-icon="health_and_safety">health_and_safety</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary leading-tight">RuangTeknik M&amp;E</div>
+<div class="font-label-code text-label-code text-on-surface-variant">Divisi Mekanikal &amp; Elektrikal</div>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs (Progres Belajar is ACTIVE) -->
+<nav class="space-y-1.5 flex-1">
+<!-- Tab 1: Dashboard -->
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-98 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Tab 2: Katalog Modul -->
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-98 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+<span>Katalog Modul</span>
+</a>
+<!-- Tab 3: Progres Belajar (ACTIVE ITEM) -->
+<a class="bg-secondary-container dark:bg-tertiary-container text-primary-container dark:text-inverse-primary font-title-md text-title-md border-l-4 border-primary-container dark:border-inverse-primary px-space-md py-space-sm flex items-center gap-space-sm rounded-r-lg active:scale-98 transition-transform duration-100 shadow-sm" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="trending_up">trending_up</span>
+<span>Progres Belajar</span>
+</a>
+<!-- Tab 4: Riwayat Kuis -->
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-98 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="fact_check">fact_check</span>
+<span>Riwayat Kuis</span>
+</a>
+<!-- Tab 5: Profil Saya -->
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-on-surface dark:hover:text-inverse-on-surface active:scale-98 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="account_circle">account_circle</span>
+<span>Profil Saya</span>
+</a>
+<!-- CTA SOP Darurat K3 -->
+<div class="pt-space-md">
+<div class="p-3 bg-error-container border-l-4 border-error rounded-r-lg">
+<div class="flex items-center gap-1.5 text-error font-label-k3 text-label-k3 uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-base" data-icon="warning">warning</span>
+<span>[K3 - PERHATIAN]</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-error-container mb-2">Akses cepat matriks penanganan darurat panel MV/LV &amp; evakuasi lift gedung.</p>
+<button class="w-full py-1.5 px-2 bg-error text-on-error rounded font-label-code text-label-code flex items-center justify-center gap-1 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+<span>SOP Darurat K3</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Rail Footer -->
+<div class="pt-space-md border-t border-outline-variant space-y-1">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm px-space-md py-2 flex items-center gap-space-sm rounded-lg hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="verified_user">verified_user</span>
+<span>Bantuan &amp; Regulasi PU</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm px-space-md py-2 flex items-center gap-space-sm rounded-lg hover:bg-surface-container dark:hover:bg-tertiary-container hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span>Pengaturan</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT VIEWPORT (Desktop Offset for 288px SideNav) -->
+<main class="ml-72 flex-1 p-space-lg lg:p-space-xl max-w-7xl mx-auto w-full">
+<!-- HERO TECHNICIAN DOSSIER HEADER -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg mb-space-lg shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg pb-space-lg border-b border-surface-container-high">
+<!-- Identity Group -->
+<div class="flex items-start gap-space-md">
+<div class="relative">
+<img alt="Foto Teknisi Budi Santoso" class="w-16 h-16 rounded-xl object-cover border-2 border-primary-container" data-alt="Portrait photo of a certified hospital building facilities technician smiling warmly with blue workwear and personal protective gear in a high-tech hospital mechanical plant room with bright diffuse natural lighting and warm drafting technical background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT8xm26b81-4a42DDWGlq28fdKJMuOeVv1oF7-sqSUzni8avrrvtmuChy3rrTHWUpwd7wxeTOybE0g-Jz083ve3m4qHGyGRhzR6Ewl9yMNbyF9-g6gZwOFQMxSa5XZdtWQ2sAIqM1bwaofT30NeQ69Mlme0EhFKJoUIDgrio7yA4QOO6bJ65o6zxFj5RoIQggorOVyVmEN2teknPude4OTF9fcQ_at3vNk2bmpuP14HYQR-gFSc__u"/>
+<span class="absolute -bottom-1.5 -right-1.5 bg-surface-container-lowest p-0.5 rounded-full shadow">
+<span class="material-symbols-outlined text-primary-container text-lg" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface">Budi Santoso</h1>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-code text-label-code">NIK: #4092</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-badge text-label-badge uppercase tracking-wider">Level 3 - Senior Teknisi M&amp;E</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-base" data-icon="local_hospital">local_hospital</span>
+                RS Medika Prima • Unit Pemeliharaan Instalasi Gedung (UPIG) • Shift Pagi
+              </p>
+</div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-space-sm">
+<button class="px-3.5 py-2 border border-outline-variant text-primary-container font-title-md text-title-md rounded-lg bg-surface-container-lowest hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg" data-icon="print">print</span>
+<span>Cetak Berkas Dossier</span>
+</button>
+<button class="px-4 py-2 bg-primary-container text-on-primary font-title-md text-title-md rounded-lg hover:bg-primary transition-colors flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="cloud_upload">cloud_upload</span>
+<span>Unggah Logbook Mandiri</span>
+</button>
+</div>
+</div>
+<!-- KPI Strip (Cum Hours & Quiz Pass Rate) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-lg">
+<!-- Metric 1: Jam Kumulatif -->
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-label-badge text-label-badge uppercase tracking-wider">Jam Belajar Kumulatif</span>
+<span class="material-symbols-outlined text-lg text-primary-container" data-icon="timelapse">timelapse</span>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">28.5</span>
+<span class="font-label-code text-label-code text-on-surface-variant">/ 32 Jam Target Bulan Ini</span>
+</div>
+<div>
+<div class="w-full bg-surface-variant rounded-full h-2 overflow-hidden mb-1">
+<div class="bg-primary-container h-2 rounded-full" style="width: 89%;"></div>
+</div>
+<div class="flex justify-between font-label-code text-label-code text-on-surface-variant">
+<span>Pencapaian: 89.1%</span>
+<span class="text-primary font-semibold">Sisa 3.5 Jam</span>
+</div>
+</div>
+</div>
+<!-- Metric 2: Indeks Kelulusan Kuis -->
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-label-badge text-label-badge uppercase tracking-wider">Indeks Kelulusan Asesmen</span>
+<span class="material-symbols-outlined text-lg text-primary-container" data-icon="grade">grade</span>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">88%</span>
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-green-100 text-green-800 border border-green-300">Diatas KKM</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between">
+<span>KKM Standar PU: 80%</span>
+<span class="font-label-code text-label-code text-green-700 font-medium">+8% Delta Positif</span>
+</div>
+</div>
+<!-- Metric 3: Modul & Kuis Selesai -->
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-label-badge text-label-badge uppercase tracking-wider">Kurikulum Selesai</span>
+<span class="material-symbols-outlined text-lg text-primary-container" data-icon="task_alt">task_alt</span>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">4</span>
+<span class="font-label-code text-label-code text-on-surface-variant">dari 11 Modul Inti</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-primary-container" data-icon="check_circle">check_circle</span>
+<span>18 Kuis Berhasil Terverifikasi</span>
+</div>
+</div>
+<!-- Metric 4: Lisensi Aktif K3 -->
+<div class="p-space-md bg-surface-container-low rounded-lg border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-1">
+<span class="font-label-badge text-label-badge uppercase tracking-wider">Lisensi K3 Terverifikasi</span>
+<span class="material-symbols-outlined text-lg text-primary-container" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">2</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Sertifikasi Aktif</span>
+</div>
+<div class="flex flex-wrap gap-1 font-label-code text-label-code">
+<span class="px-1.5 py-0.5 bg-surface-container-lowest border border-outline-variant rounded text-on-surface text-[11px]">LOTO Kelistrikan</span>
+<span class="px-1.5 py-0.5 bg-surface-container-lowest border border-outline-variant rounded text-on-surface text-[11px]">Ahli Chiller RS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ASYMMETRIC BENTO GRID: DIAGNOSTICS & LOGBOOK VERIFICATION -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- CHART & TREN ANALISIS (8 Cols) -->
+<section class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Riwayat Jam Belajar &amp; Tren Asesmen</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Performa 4 Pekan Terakhir Divisi Mekanikal &amp; Elektrikal RS Medika Prima</p>
+</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="w-3 h-3 bg-primary-container rounded-sm inline-block"></span> Jam Belajar
+                </span>
+<span class="flex items-center gap-1 text-on-surface-variant ml-2">
+<span class="w-3 h-1 bg-secondary rounded-full inline-block"></span> Nilai Kuis (%)
+                </span>
+</div>
+</div>
+<!-- Stylized CSS Data Blueprint Visualizer -->
+<div class="h-56 w-full pt-4 pb-2 flex items-end justify-between gap-4 border-b border-surface-container-high px-2">
+<!-- Week 1 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-code text-label-code text-on-surface-variant mb-1 group-hover:text-primary-container">6.5 Jam</span>
+<div class="w-full max-w-[48px] bg-surface-container-high rounded-t flex flex-col justify-end h-40 overflow-hidden relative">
+<div class="w-full bg-primary-container/85 h-[55%] transition-all group-hover:bg-primary-container"></div>
+</div>
+<div class="w-full text-center mt-2 font-label-code text-label-code text-on-surface-variant">Minggu 1</div>
+<div class="font-label-badge text-label-badge text-secondary font-bold">Kuis: 82%</div>
+</div>
+<!-- Week 2 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-code text-label-code text-on-surface-variant mb-1 group-hover:text-primary-container">8.0 Jam</span>
+<div class="w-full max-w-[48px] bg-surface-container-high rounded-t flex flex-col justify-end h-40 overflow-hidden relative">
+<div class="w-full bg-primary-container/85 h-[75%] transition-all group-hover:bg-primary-container"></div>
+</div>
+<div class="w-full text-center mt-2 font-label-code text-label-code text-on-surface-variant">Minggu 2</div>
+<div class="font-label-badge text-label-badge text-secondary font-bold">Kuis: 85%</div>
+</div>
+<!-- Week 3 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-code text-label-code text-on-surface-variant mb-1 group-hover:text-primary-container">5.0 Jam</span>
+<div class="w-full max-w-[48px] bg-surface-container-high rounded-t flex flex-col justify-end h-40 overflow-hidden relative">
+<div class="w-full bg-primary-container/85 h-[45%] transition-all group-hover:bg-primary-container"></div>
+</div>
+<div class="w-full text-center mt-2 font-label-code text-label-code text-on-surface-variant">Minggu 3</div>
+<div class="font-label-badge text-label-badge text-secondary font-bold">Kuis: 90%</div>
+</div>
+<!-- Week 4 (Current) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<span class="font-label-code text-label-code text-primary-container font-semibold mb-1">9.0 Jam</span>
+<div class="w-full max-w-[48px] bg-surface-container-high rounded-t flex flex-col justify-end h-40 overflow-hidden relative border-t-2 border-primary-container">
+<div class="w-full bg-primary-container h-[88%] transition-all"></div>
+</div>
+<div class="w-full text-center mt-2 font-label-code text-label-code text-primary-container font-semibold">Minggu 4 (Kini)</div>
+<div class="font-label-badge text-label-badge text-primary-container font-bold">Kuis: 94%</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-green-700" data-icon="trending_up">trending_up</span>
+              Stabilitas jam praktik konsisten di atas 24 jam/bulan minimum target komite K3 RS.
+            </span>
+<span class="font-label-code text-label-code text-primary">Target Audit: 31 Mei 2025</span>
+</div>
+</section>
+<!-- LOGBOOK PRAKTIK MANDIRI & VERIFIKASI SUPERVISOR (4 Cols) -->
+<section class="lg:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Logbook Mandiri</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-code text-label-code text-on-surface">14 Jam Praktik</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+              Verifikasi inspeksi fisik lapangan oleh Supervisor M&amp;E Rumah Sakit.
+            </p>
+<!-- Verification List -->
+<div class="space-y-space-sm">
+<!-- Item 1: AHU Rooftop -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-low">
+<div class="flex items-start justify-between gap-2 mb-1">
+<div class="font-title-md text-title-md text-on-surface leading-tight text-sm">Inspeksi V-Belt &amp; Static Pressure AHU Ruang Operasi</div>
+<span class="material-symbols-outlined text-green-700 text-lg flex-shrink-0" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs mb-1">Item #LB-902 • 4.0 Jam • Gedung Bedah Lantai 4</div>
+<div class="p-1.5 bg-surface-container-lowest rounded border border-outline-variant/60 text-xs text-on-surface-variant">
+<span class="font-semibold text-on-surface">SPV: Ir. Hendra (Koord. M&amp;E)</span>: "Tegangan belt sesuai SOP, filter hepa tercatat delta P = 140Pa. Disetujui."
+                </div>
+</div>
+<!-- Item 2: Genset Sync -->
+<div class="p-3 rounded-lg border border-outline-variant bg-surface-container-low">
+<div class="flex items-start justify-between gap-2 mb-1">
+<div class="font-title-md text-title-md text-on-surface leading-tight text-sm">Uji Beban Mingguan Genset Emergency 1000 kVA</div>
+<span class="material-symbols-outlined text-green-700 text-lg flex-shrink-0" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs mb-1">Item #LB-884 • 3.5 Jam • Powerhouse Gardu B</div>
+<div class="p-1.5 bg-surface-container-lowest rounded border border-outline-variant/60 text-xs text-on-surface-variant">
+<span class="font-semibold text-on-surface">SPV: Ir. Hendra (Koord. M&amp;E)</span>: "Starting time ATS 7.8 detik, kapasitas baterai starter normal 24V DC."
+                </div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-container-high">
+<button class="w-full py-2 px-3 border border-outline-variant text-primary font-body-sm text-body-sm font-semibold rounded-lg hover:bg-surface-container flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="history_edu">history_edu</span>
+<span>Lihat Semua 12 Lembar Verifikasi</span>
+</button>
+</div>
+</section>
+</div>
+<!-- MATRIKS PROGRES 11 MODUL UTAMA TEKNISI -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg mb-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Matriks Kurikulum: 11 Modul Utama M&amp;E Gedung</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standarisasi Asosiasi Fasilitas Rumah Sakit &amp; PU Cipta Karya</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1 font-label-code text-label-code bg-surface-container px-2.5 py-1 rounded-lg text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-green-600"></span> 2 Lulus
+              <span class="w-2 h-2 rounded-full bg-blue-600 ml-2"></span> 2 Sedang
+              <span class="w-2 h-2 rounded-full bg-slate-400 ml-2"></span> 7 Belum
+            </div>
+</div>
+</div>
+<!-- Table of 11 Modules with visual indicators -->
+<div class="overflow-x-auto border border-outline-variant rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-secondary-container/40 border-b border-outline-variant font-label-badge text-label-badge uppercase tracking-wider text-on-surface">
+<th class="py-3 px-4">Kode &amp; Modul Kompetensi</th>
+<th class="py-3 px-4">Kategori Teknis</th>
+<th class="py-3 px-4 w-52">Progres Capaian</th>
+<th class="py-3 px-4">Status Kelulusan</th>
+<th class="py-3 px-4 text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-body-sm text-body-sm">
+<!-- 1. K3 Keselamatan Kerja -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-title-md text-title-md text-on-surface">K3 &amp; Keselamatan Kerja Listrik / Mesin Gedung</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs">MOD-K3-001 • 6 Sesi Selesai</div>
+</td>
+<td class="py-3.5 px-4 font-label-code text-label-code">Regulasi &amp; Proteksi Diri</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-green-600 h-2 rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-label-code text-label-code font-semibold text-green-700">100%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded font-label-badge text-label-badge bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">Lulus Sertifikasi</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-3 py-1.5 border border-[#1B6D2F] text-[#1B6D2F] font-body-sm text-body-sm font-semibold rounded-lg hover:bg-green-50 flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+<span>Unduh Sertifikat</span>
+</button>
+</td>
+</tr>
+<!-- 2. Fire Protection -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-title-md text-title-md text-on-surface">Fire Protection &amp; Hydrant/Alarm System Rumah Sakit</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs">MOD-FP-002 • 8 Sesi Selesai</div>
+</td>
+<td class="py-3.5 px-4 font-label-code text-label-code">Mekanikal &amp; Pompa</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-green-600 h-2 rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-label-code text-label-code font-semibold text-green-700">100%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded font-label-badge text-label-badge bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">Lulus Sertifikasi</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-3 py-1.5 border border-[#1B6D2F] text-[#1B6D2F] font-body-sm text-body-sm font-semibold rounded-lg hover:bg-green-50 flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+<span>Unduh Sertifikat</span>
+</button>
+</td>
+</tr>
+<!-- 3. HVAC System -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-title-md text-title-md text-on-surface">HVAC, Chiller Sentral &amp; Air Handling Unit (AHU) Medis</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs">MOD-HV-003 • 6 dari 10 Sesi</div>
+</td>
+<td class="py-3.5 px-4 font-label-code text-label-code">Tata Udara &amp; Refrigerasi</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-[#0F5B8C] h-2 rounded-full" style="width: 65%;"></div>
+</div>
+<span class="font-label-code text-label-code font-semibold text-[#0F5B8C]">65%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded font-label-badge text-label-badge bg-[#D2E7FF] text-[#0F5B8C] border border-[#9DC9FA]">Sedang Berjalan</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-3.5 py-1.5 bg-primary-container text-on-primary font-body-sm text-body-sm rounded-lg hover:bg-primary transition-colors flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+<span>Lanjutkan Modul</span>
+</button>
+</td>
+</tr>
+<!-- 4. Sistem Kelistrikan Gedung -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-title-md text-title-md text-on-surface">Sistem Kelistrikan Gedung: Trafo, Panel MV/LV &amp; Genset ATS</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs">MOD-EL-004 • 4 dari 10 Sesi</div>
+</td>
+<td class="py-3.5 px-4 font-label-code text-label-code">Elektrikal &amp; Daya</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-[#0F5B8C] h-2 rounded-full" style="width: 40%;"></div>
+</div>
+<span class="font-label-code text-label-code font-semibold text-[#0F5B8C]">40%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded font-label-badge text-label-badge bg-[#D2E7FF] text-[#0F5B8C] border border-[#9DC9FA]">Sedang Berjalan</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-3.5 py-1.5 bg-primary-container text-on-primary font-body-sm text-body-sm rounded-lg hover:bg-primary transition-colors flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+<span>Lanjutkan Modul</span>
+</button>
+</td>
+</tr>
+<!-- 5. Plumbing & Pompa -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-title-md text-title-md text-on-surface">Plumbing, Distribusi Air Bersih, Booster &amp; IPAL Rumah Sakit</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs">MOD-PL-005 • 0 dari 8 Sesi</div>
+</td>
+<td class="py-3.5 px-4 font-label-code text-label-code">Sanitasi &amp; Hidrolik</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-slate-300 h-2 rounded-full" style="width: 0%;"></div>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">0%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded font-label-badge text-label-badge bg-[#E5E7EB] text-[#4B5563] border border-[#D1D5DB]">Belum Mulai</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-3 py-1.5 border border-outline-variant text-on-surface-variant font-body-sm text-body-sm rounded-lg hover:bg-surface-container flex items-center gap-1 ml-auto">
+<span>Mulai Modul</span>
+</button>
+</td>
+</tr>
+<!-- 6. BMS (Building Management System) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-title-md text-title-md text-on-surface">Building Management System (BMS) &amp; Otomasi Sensor DDC</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs">MOD-BM-006 • 0 dari 7 Sesi</div>
+</td>
+<td class="py-3.5 px-4 font-label-code text-label-code">Instrumentasi &amp; Kontrol</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-slate-300 h-2 rounded-full" style="width: 0%;"></div>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">0%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded font-label-badge text-label-badge bg-[#E5E7EB] text-[#4B5563] border border-[#D1D5DB]">Belum Mulai</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-3 py-1.5 border border-outline-variant text-on-surface-variant font-body-sm text-body-sm rounded-lg hover:bg-surface-container flex items-center gap-1 ml-auto">
+<span>Mulai Modul</span>
+</button>
+</td>
+</tr>
+<!-- 7. Gas Medis -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-title-md text-title-md text-on-surface">Instalasi &amp; Pemantauan Sentral Gas Medis (Oksigen, N2O, Vakum)</div>
+<div class="font-label-code text-label-code text-on-surface-variant text-xs">MOD-GM-007 • Prasyarat: K3 Lulus</div>
+</td>
+<td class="py-3.5 px-4 font-label-code text-label-code">Pneumatik Khusus RS</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-slate-300 h-2 rounded-full" style="width: 0%;"></div>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">0%</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded font-label-badge text-label-badge bg-[#E5E7EB] text-[#4B5563] border border-[#D1D5DB]">Terkunci (Jadwal Mei)</span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<button class="px-3 py-1.5 text-on-surface-variant/60 font-body-sm text-body-sm rounded-lg cursor-not-allowed flex items-center gap-1 ml-auto" disabled="">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+<span>Terkunci</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-space-md flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Menampilkan 7 dari 11 modul terdaftar. 4 modul lanjutan akan dibuka setelah verifikasi semester 1 selesai.</span>
+<a class="font-semibold text-primary hover:underline flex items-center gap-1" href="#">
+<span>Buka Seluruh Kurikulum</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- RIWAYAT TRANSKRIP KUIS & ASESMEN LENGKAP -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Transkrip Lengkap Kuis &amp; Evaluasi Standar SOP</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Catatan waktu nyata pengujian komprehensif teknisi di lapangan</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 border border-outline-variant rounded-lg text-body-sm font-body-sm text-on-surface flex items-center gap-1.5 hover:bg-surface-container">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+<span>Filter Status</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant rounded-lg text-body-sm font-body-sm text-on-surface flex items-center gap-1.5 hover:bg-surface-container">
+<span class="material-symbols-outlined text-sm" data-icon="file_download">file_download</span>
+<span>Ekspor PDF</span>
+</button>
+</div>
+</div>
+<!-- Interactive Transcript Table -->
+<div class="overflow-x-auto border border-outline-variant rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/60 border-b border-outline-variant font-label-badge text-label-badge uppercase tracking-wider text-on-surface">
+<th class="py-3 px-4">Tanggal Ujian</th>
+<th class="py-3 px-4">Nama Modul / Sub-Topik Asesmen</th>
+<th class="py-3 px-4 text-right">Skor Asesmen</th>
+<th class="py-3 px-4 text-center">Percobaan Ke-</th>
+<th class="py-3 px-4">Status Kelulusan</th>
+<th class="py-3 px-4 text-right">Aksi Pembahasan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-body-sm text-body-sm">
+<!-- Transcript Item 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-label-code text-label-code text-on-surface-variant">
+                  24 Apr 2025 • 14:15
+                </td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">Prosedur LOTO (Lockout/Tagout) Gardu Tegangan Menengah 20kV</div>
+<div class="font-label-code text-label-code text-xs text-on-surface-variant">Evaluasi Keselamatan Fisik &amp; Switchgear LV</div>
+</td>
+<td class="py-3 px-4 text-right font-label-code text-label-code font-bold text-green-700 text-base">
+                  96 / 100
+                </td>
+<td class="py-3 px-4 text-center font-label-code text-label-code">
+                  1 (Pertama)
+                </td>
+<td class="py-3 px-4">
+<span class="px-2.5 py-0.5 rounded font-label-badge text-label-badge bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">Lulus KKM (&gt;=80)</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 bg-surface-container-lowest border border-outline-variant text-primary-container font-label-code text-label-code rounded hover:bg-surface-container transition-colors inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>Kaji Ulang Pembahasan Soal</span>
+</button>
+</td>
+</tr>
+<!-- Transcript Item 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-label-code text-label-code text-on-surface-variant">
+                  19 Apr 2025 • 09:30
+                </td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">Uji Komisioning Fire Alarm Addressable &amp; Detektor Smoke Ruang ICU</div>
+<div class="font-label-code text-label-code text-xs text-on-surface-variant">Inspeksi Loop Controller &amp; Audio Bell Relay</div>
+</td>
+<td class="py-3 px-4 text-right font-label-code text-label-code font-bold text-green-700 text-base">
+                  92 / 100
+                </td>
+<td class="py-3 px-4 text-center font-label-code text-label-code">
+                  1 (Pertama)
+                </td>
+<td class="py-3 px-4">
+<span class="px-2.5 py-0.5 rounded font-label-badge text-label-badge bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">Lulus KKM (&gt;=80)</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 bg-surface-container-lowest border border-outline-variant text-primary-container font-label-code text-label-code rounded hover:bg-surface-container transition-colors inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>Kaji Ulang Pembahasan Soal</span>
+</button>
+</td>
+</tr>
+<!-- Transcript Item 3 (Remedial Case Passed on 2nd Try) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3 px-4 font-label-code text-label-code text-on-surface-variant">
+                  12 Apr 2025 • 16:40
+                </td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">Diagnostik Tekanan Refrigerant R-134a Chiller Screw Water-Cooled</div>
+<div class="font-label-code text-label-code text-xs text-on-surface-variant">Kalkulasi Superheat &amp; Subcooling Kompresor</div>
+</td>
+<td class="py-3 px-4 text-right font-label-code text-label-code font-bold text-green-700 text-base">
+                  84 / 100
+                </td>
+<td class="py-3 px-4 text-center font-label-code text-label-code">
+                  2 (Ujian Ulang)
+                </td>
+<td class="py-3 px-4">
+<span class="px-2.5 py-0.5 rounded font-label-badge text-label-badge bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">Lulus KKM (&gt;=80)</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 bg-surface-container-lowest border border-outline-variant text-primary-container font-label-code text-label-code rounded hover:bg-surface-container transition-colors inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>Kaji Ulang Pembahasan Soal</span>
+</button>
+</td>
+</tr>
+<!-- Transcript Item 4 (Initial Remedial Log) -->
+<tr class="hover:bg-surface-container-low transition-colors bg-red-50/30">
+<td class="py-3 px-4 font-label-code text-label-code text-on-surface-variant">
+                  10 Apr 2025 • 11:20
+                </td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">Diagnostik Tekanan Refrigerant R-134a Chiller Screw Water-Cooled</div>
+<div class="font-label-code text-label-code text-xs text-on-surface-variant">Kalkulasi Superheat &amp; Subcooling Kompresor</div>
+</td>
+<td class="py-3 px-4 text-right font-label-code text-label-code font-bold text-error text-base">
+                  68 / 100
+                </td>
+<td class="py-3 px-4 text-center font-label-code text-label-code">
+                  1 (Pertama)
+                </td>
+<td class="py-3 px-4">
+<span class="px-2.5 py-0.5 rounded font-label-badge text-label-badge bg-[#FFDAD6] text-[#93000A] border border-outline-variant">Remedial Diperlukan</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 bg-surface-container-lowest border border-outline-variant text-primary-container font-label-code text-label-code rounded hover:bg-surface-container transition-colors inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>Kaji Ulang Pembahasan Soal</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Record Metadata -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mt-space-md pt-space-xs text-body-sm text-on-surface-variant">
+<div class="font-label-code text-label-code">
+            Total Rekaman Asesmen: 18 Kuis (17 Lulus KKM, 1 Berhasil Di-Remedial)
+          </div>
+<div class="flex items-center gap-1 font-label-code text-label-code">
+<button class="px-2 py-1 border border-outline-variant rounded bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" disabled="">« Sebelumnya</button>
+<span class="px-3 py-1 bg-primary-container text-on-primary rounded font-bold">1</span>
+<button class="px-2 py-1 border border-outline-variant rounded bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container">2</button>
+<button class="px-2 py-1 border border-outline-variant rounded bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container">Selanjutnya »</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Micro-interaction JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Logbook verification button interaction
+      const reviewButtons = document.querySelectorAll('button:has(span[data-icon="visibility"])');
+      reviewButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const rowTitle = e.target.closest('tr')?.querySelector('.font-semibold')?.innerText || 'Modul';
+          alert('Membuka detail lembar pembahasan soal untuk: ' + rowTitle);
+        });
+      });
+    });
+  </script>
+</body></html>

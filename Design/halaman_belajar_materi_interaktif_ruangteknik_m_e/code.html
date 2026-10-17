@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RuangTeknik M&amp;E - Modul Pembelajaran Chiller Sentrifugal Water-Cooled</title>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#8b716f",
+            "surface-variant": "#dee2ec",
+            "tertiary-fixed-dim": "#b3c9da",
+            "secondary-fixed": "#f3e1bc",
+            "surface-container-highest": "#dee2ec",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#293e4b",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#231a04",
+            "on-surface-variant": "#584140",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#f3e1bc",
+            "on-secondary-container": "#706346",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#071e2a",
+            "on-primary-container": "#ff7f7b",
+            "tertiary": "#132834",
+            "error-container": "#ffdad6",
+            "on-surface": "#171c23",
+            "on-tertiary-container": "#93a9b8",
+            "inverse-on-surface": "#edf1fb",
+            "primary": "#540008",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#aa3435",
+            "outline-variant": "#dfbfbd",
+            "inverse-surface": "#2c3138",
+            "primary-container": "#790d16",
+            "primary-fixed": "#ffdad7",
+            "surface-container": "#eaeef8",
+            "surface-container-low": "#f0f4fd",
+            "inverse-primary": "#ffb3af",
+            "on-tertiary-fixed-variant": "#354957",
+            "on-primary-fixed-variant": "#891b20",
+            "primary-fixed-dim": "#ffb3af",
+            "secondary": "#6a5d40",
+            "surface-dim": "#d6dae4",
+            "surface-container-high": "#e4e8f2",
+            "on-primary-fixed": "#410005",
+            "surface-bright": "#f8f9ff",
+            "on-background": "#171c23",
+            "background": "#f8f9ff",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#51452a",
+            "tertiary-fixed": "#cfe6f6",
+            "surface": "#f8f9ff",
+            "secondary-fixed-dim": "#d6c5a1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "0.75rem",
+            "margin": "2rem",
+            "space-md": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Inter", "sans-serif"],
+            "label-code": ["JetBrains Mono", "monospace"],
+            "headline-md": ["Inter", "sans-serif"],
+            "label-k3": ["Inter", "sans-serif"],
+            "headline-xl-mobile": ["Inter", "sans-serif"],
+            "headline-xl": ["Inter", "sans-serif"],
+            "label-badge": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-k3": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#F5EFE1] text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- ================= TOP HEADER (Shared Component: TopNavBar adapted) ================= -->
+<header class="bg-surface-container-lowest border-b border-[#E1D5C1] sticky top-0 z-40 w-full px-space-lg h-16 flex items-center justify-between">
+<!-- Brand & Left Navigation Links -->
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-28" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-headline-md text-headline-md font-bold text-primary-container tracking-tight">RuangTeknik</span>
+<span class="font-label-code text-label-code bg-secondary-container text-on-secondary-fixed px-2 py-0.5 rounded text-[11px] font-bold">M&amp;E PORTAL</span>
+</div>
+<div class="hidden lg:flex items-center gap-6 border-l border-[#E1D5C1] pl-space-lg">
+<a class="text-primary-container font-title-md text-title-md border-b-2 border-primary-container pb-1" href="#">Katalog Modul</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" href="#">Standar SOP &amp; K3</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" href="#">Jadwal Pelatihan</a>
+</div>
+</div>
+<!-- Trailing Actions / User Profile -->
+<div class="flex items-center gap-space-md">
+<div class="hidden sm:flex items-center gap-2 bg-[#FAF7F2] border border-[#E1D5C1] rounded-lg px-2.5 py-1">
+<span class="material-symbols-outlined text-outline text-18" data-icon="search">search</span>
+<input class="bg-transparent border-0 text-body-sm font-body-sm focus:ring-0 p-0 text-on-surface w-40" placeholder="Cari SOP / Komponen..." type="text"/>
+</div>
+<div class="flex items-center gap-1 border-x border-[#E1D5C1] px-2">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors relative" title="Notifikasi Teknis">
+<span class="material-symbols-outlined text-20" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Bantuan SOP">
+<span class="material-symbols-outlined text-20" data-icon="help">help</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-container border border-[#D5C8B2] flex items-center justify-center font-label-code font-bold text-primary-container text-xs">
+          TK3
+        </div>
+<div class="hidden xl:block text-left">
+<p class="font-title-md text-[13px] leading-tight text-on-surface font-semibold">Bambang Wijaya, S.T.</p>
+<p class="font-label-code text-[11px] text-on-surface-variant">Lead M&amp;E Technician #4092</p>
+</div>
+<button class="hidden md:inline-flex items-center gap-1 bg-[#FAF7F2] border border-[#790D16] text-primary-container px-3 py-1.5 rounded-lg font-title-md text-[13px] hover:bg-secondary-container transition-colors">
+          Beralih ke Admin
+        </button>
+</div>
+</div>
+</header>
+<!-- ================= SUB-HEADER / PROGRESS & BREADCRUMB BAR ================= -->
+<section class="bg-[#FFFFFF] border-b border-[#E1D5C1] px-4 md:px-space-lg py-2.5 flex flex-wrap items-center justify-between gap-3">
+<!-- Breadcrumb -->
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant overflow-x-auto whitespace-nowrap">
+<a class="hover:text-primary-container flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-16" data-icon="home">home</span>
+        Katalog Modul
+      </a>
+<span class="material-symbols-outlined text-14 text-outline" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary-container" href="#">HVAC &amp; Refrigerasi</a>
+<span class="material-symbols-outlined text-14 text-outline" data-icon="chevron_right">chevron_right</span>
+<span class="font-semibold text-primary-container bg-secondary-container/40 px-2 py-0.5 rounded text-[12px]">
+        Chiller Sentrifugal Water-Cooled
+      </span>
+</div>
+<!-- Center / Right: Progress Indicator & Action Buttons -->
+<div class="flex items-center gap-4 ml-auto">
+<!-- Progress Bar Tracker -->
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<span class="font-label-code text-body-sm text-on-surface-variant">Progres Modul:</span>
+<span class="font-label-code font-bold text-primary-container ml-1">65% Selesai</span>
+</div>
+<div class="w-32 sm:w-44 h-2.5 bg-[#EAE8E0] rounded-full overflow-hidden border border-[#D5C8B2]">
+<div class="h-full bg-primary-container transition-all duration-300" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-2">
+<button class="inline-flex md:hidden items-center gap-1.5 bg-[#FAF7F2] border border-[#E1D5C1] px-3 py-1.5 rounded-lg text-body-sm font-title-md text-on-surface hover:bg-[#F5EFE1]" id="toggleSidebarBtn">
+<span class="material-symbols-outlined text-18" data-icon="format_list_bulleted">format_list_bulleted</span>
+          Daftar Isi
+        </button>
+<button class="inline-flex items-center gap-1.5 bg-primary-container text-white px-3.5 py-1.5 rounded-lg font-title-md text-body-sm hover:bg-[#5F0B11] active:bg-[#46080D] transition-colors shadow-sm">
+<span class="material-symbols-outlined text-18" data-icon="check_circle">check_circle</span>
+          Tandai Selesai &amp; Lanjut
+        </button>
+</div>
+</div>
+</section>
+<!-- ================= MAIN TWO-COLUMN CONTENT CANVAS ================= -->
+<div class="flex-1 max-w-[1600px] w-full mx-auto px-4 md:px-space-lg py-space-lg grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<!-- ================= LEFT COLUMN: SYLLABUS / LESSON INDEX ================= -->
+<aside class="md:col-span-4 lg:col-span-3">
+<div class="sticky top-28 bg-[#FFFFFF] border border-[#E1D5C1] rounded-xl overflow-hidden shadow-sm">
+<!-- Module Header Card -->
+<div class="bg-[#FAF7F2] p-space-md border-b border-[#E1D5C1]">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-code text-[11px] text-primary-container font-semibold tracking-wider">MODUL #HVAC-04</span>
+<span class="inline-flex items-center gap-1 bg-[#D2E7FF] text-[#0F5B8C] border border-[#9DC9FA] px-2 py-0.5 rounded text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0F5B8C] animate-pulse"></span>
+              Sedang Berjalan
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+            HVAC &amp; Refrigerasi Sentrifugal
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Gedung Komersial &amp; Fasilitas Bertingkat
+          </p>
+<div class="mt-3 pt-3 border-t border-[#E1D5C1] flex items-center justify-between text-body-sm font-label-code text-on-surface-variant text-[12px]">
+<span>6 Materi Pelajaran</span>
+<span>Est. 2 Jam 45 Menit</span>
+</div>
+</div>
+<!-- Lessons Tree / Syllabus List -->
+<div class="p-2 divide-y divide-[#F5EFE1]">
+<!-- Lesson 1 (Completed) -->
+<a class="p-3 flex items-start gap-3 rounded-lg hover:bg-[#FAF7F2] transition-colors group" href="#">
+<div class="w-7 h-7 rounded-full bg-[#D7F5D7] border border-[#A3E2A3] flex items-center justify-center text-[#1B6D2F] shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-18" data-icon="check">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-code text-[11px] text-on-surface-variant">PELAJARAN 01</span>
+<span class="font-label-code text-[11px] text-[#1B6D2F]">Selesai</span>
+</div>
+<p class="font-title-md text-[13px] text-on-surface group-hover:text-primary-container truncate font-medium">
+                1. Teori Dasar Kompresi Uap &amp; Diagram P-h
+              </p>
+<span class="font-label-code text-[11px] text-outline">18 Menit • Materi Teori</span>
+</div>
+</a>
+<!-- Lesson 2 (Completed) -->
+<a class="p-3 flex items-start gap-3 rounded-lg hover:bg-[#FAF7F2] transition-colors group" href="#">
+<div class="w-7 h-7 rounded-full bg-[#D7F5D7] border border-[#A3E2A3] flex items-center justify-center text-[#1B6D2F] shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-18" data-icon="check">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-code text-[11px] text-on-surface-variant">PELAJARAN 02</span>
+<span class="font-label-code text-[11px] text-[#1B6D2F]">Selesai</span>
+</div>
+<p class="font-title-md text-[13px] text-on-surface group-hover:text-primary-container truncate font-medium">
+                2. Komponen Utama Chiller Sentrifugal
+              </p>
+<span class="font-label-code text-[11px] text-outline">22 Menit • Diagram Interaktif</span>
+</div>
+</a>
+<!-- Lesson 3 (ACTIVE LESSON) -->
+<div class="p-3 bg-secondary-container/60 border-l-4 border-primary-container rounded-r-lg">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary-container text-white flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-18" data-icon="play_arrow">play_arrow</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-code text-[11px] font-bold text-primary-container">PELAJARAN 03 [AKTIF]</span>
+<span class="inline-flex items-center gap-1 font-label-code text-[10px] bg-primary-container text-white px-1.5 py-0.2 rounded font-bold">
+                    SEDANG DIBUKA
+                  </span>
+</div>
+<p class="font-title-md text-[13.5px] text-primary-container font-bold leading-tight mt-0.5">
+                  3. Prosedur Start-Up &amp; Inspeksi Tekanan Chiller
+                </p>
+<div class="flex items-center gap-2 mt-1 font-label-code text-[11px] text-on-surface">
+<span class="flex items-center gap-0.5 text-primary-container font-semibold">
+<span class="material-symbols-outlined text-14" data-icon="schedule">schedule</span> 25 Menit
+                  </span>
+<span>• SOP Praktik Lapangan</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lesson 4 (Locked) -->
+<div class="p-3 flex items-start gap-3 opacity-70 cursor-not-allowed">
+<div class="w-7 h-7 rounded-full bg-[#E5E7EB] border border-[#D1D5DB] flex items-center justify-center text-[#6B7280] shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-16" data-icon="lock">lock</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-code text-[11px] text-outline">PELAJARAN 04</span>
+<span class="font-label-code text-[11px] text-outline">Terkunci</span>
+</div>
+<p class="font-title-md text-[13px] text-on-surface-variant truncate font-normal">
+                4. Cooling Tower &amp; Water Treatment SOP
+              </p>
+<span class="font-label-code text-[11px] text-outline">30 Menit • Kimia Air &amp; Fan</span>
+</div>
+</div>
+<!-- Lesson 5 (Locked) -->
+<div class="p-3 flex items-start gap-3 opacity-70 cursor-not-allowed">
+<div class="w-7 h-7 rounded-full bg-[#E5E7EB] border border-[#D1D5DB] flex items-center justify-center text-[#6B7280] shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-16" data-icon="lock">lock</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-code text-[11px] text-outline">PELAJARAN 05</span>
+<span class="font-label-code text-[11px] text-outline">Terkunci</span>
+</div>
+<p class="font-title-md text-[13px] text-on-surface-variant truncate font-normal">
+                5. Pemeriksaan Sensor &amp; BMS Interfacing
+              </p>
+<span class="font-label-code text-[11px] text-outline">20 Menit • Protokol BACnet</span>
+</div>
+</div>
+<!-- Lesson 6 (Quiz Locked) -->
+<div class="p-3 flex items-start gap-3 opacity-70 cursor-not-allowed bg-[#FAF7F2]/50">
+<div class="w-7 h-7 rounded-full bg-secondary-container/50 border border-[#D5C8B2] flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-16" data-icon="assignment">assignment</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-code text-[11px] text-outline">EVALUASI AKHIR</span>
+<span class="font-label-code text-[11px] text-outline">Terkunci</span>
+</div>
+<p class="font-title-md text-[13px] text-on-surface-variant font-medium">
+                6. Kuis Evaluasi Modul &amp; Simulasi Troubleshooting
+              </p>
+<span class="font-label-code text-[11px] text-outline">25 Soal Teknis • Minimal 80%</span>
+</div>
+</div>
+</div>
+<!-- Left Column Footer Help -->
+<div class="p-3 bg-[#FAF7F2] border-t border-[#E1D5C1] flex items-center justify-between">
+<a class="font-label-code text-[11.5px] text-primary-container hover:underline inline-flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-16" data-icon="download">download</span>
+            Silabus Lengkap (PDF)
+          </a>
+<span class="font-label-code text-[11px] text-outline">Versi 2.4</span>
+</div>
+</div>
+</aside>
+<!-- ================= RIGHT COLUMN: INTERACTIVE LEARNING CANVAS ================= -->
+<main class="md:col-span-8 lg:col-span-9 space-y-space-lg">
+<!-- ================= HEADER SECTION: DOCUMENT CODE & SPECIFICATIONS ================= -->
+<section class="bg-[#FFFFFF] border border-[#E1D5C1] rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#E1D5C1]">
+<div class="flex flex-wrap items-center gap-2">
+<span class="bg-[#FAF7F2] border border-[#790D16] text-[#790D16] font-label-code text-[12px] font-bold px-2.5 py-1 rounded">
+              SOP-ME-HVAC-04/REV.02
+            </span>
+<span class="bg-secondary-container text-on-secondary-fixed font-label-code text-[11px] px-2.5 py-1 rounded font-semibold">
+              STANDAR SNI 03-6572
+            </span>
+<span class="bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] font-label-badge text-[11px] px-2.5 py-1 rounded">
+              STANDARD OPERATIONAL PROCEDURE VERIFIKASI
+            </span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-code text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-18 text-outline" data-icon="schedule">schedule</span>
+              Estimasi: <strong class="text-on-surface ml-0.5">25 Menit</strong>
+</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-18 text-outline" data-icon="school">school</span>
+              Tingkat: <strong class="text-on-surface ml-0.5">Madya (Level 3)</strong>
+</span>
+</div>
+</div>
+<div class="mt-4">
+<p class="font-label-code text-body-sm text-primary-container font-semibold tracking-wide">
+            PELAJARAN 3 / MODUL HVAC-04
+          </p>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mt-1 leading-tight">
+            Pengoperasian Chiller Sentrifugal Water-Cooled &amp; Siklus Refrigerasi
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-4xl">
+            Panduan komprehensif inspeksi pra-start, urutan interlocking sirkuit fluida (chilled &amp; condenser loop), parameter differential pressure oli, serta pemantauan continuous load pada unit pendingin gedung berskala besar.
+          </p>
+</div>
+</section>
+<!-- ================= K3 WARNING BOX (CRITICAL SAFETY NOTICE) ================= -->
+<section class="bg-[#FFDAD6] border-2 border-primary-container rounded-xl p-space-md md:p-space-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="p-2.5 bg-primary-container text-white rounded-lg shrink-0">
+<span class="material-symbols-outlined text-28" data-icon="warning">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-k3 text-label-k3 bg-primary-container text-white px-2 py-0.5 rounded tracking-wider">
+                [K3 - KEMENAKER RI WAJIB]
+              </span>
+<span class="font-label-code text-[12px] text-primary-container font-bold">
+                STANDAR KESELAMATAN TEGANGAN TINGGI &amp; TEKANAN FLUIDA
+              </span>
+</div>
+<p class="font-body-md text-body-md text-[#410002] font-semibold mt-1.5 leading-relaxed">
+              PERINGATAN K3 WAJIB: Pastikan prosedur LOTO (Lockout/Tagout) dan pemeriksaan zero electrical voltage pada panel starter MCCB 380V telah diverifikasi sebelum memeriksa terminal motor kompresor atau membuka katup purge refrigerant.
+            </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-2 self-end md:self-center w-full md:w-auto">
+<button class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-primary-container text-white px-4 py-2.5 rounded-lg font-title-md text-body-sm hover:bg-[#5F0B11] active:bg-[#46080D] transition-colors whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-18" data-icon="file_download">file_download</span>
+            Unduh SOP LOTO PDF
+          </button>
+</div>
+</section>
+<!-- ================= INTERACTIVE 3D SKEMATIK & P&ID CHILLER PLAYER ================= -->
+<section class="bg-[#FFFFFF] border border-[#E1D5C1] rounded-xl overflow-hidden shadow-sm">
+<!-- Interactive Player Control Header -->
+<div class="bg-[#171C23] text-white px-space-md py-3 flex flex-wrap items-center justify-between gap-3 border-b border-[#2C3138]">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 bg-[#293E4B] px-2.5 py-1 rounded text-tertiary-fixed font-label-code text-[11px] font-semibold">
+<span class="w-2 h-2 rounded-full bg-[#4ADE80] animate-ping"></span>
+              P&amp;ID SCHEMATIC SIMULATOR V2.1
+            </div>
+<span class="font-title-md text-body-sm text-surface-bright hidden sm:inline">
+              Chiller Sentrifugal Sirkuit R-134a
+            </span>
+</div>
+<!-- Interactive Viewport State Selectors -->
+<div class="flex items-center gap-1.5 bg-[#2C3138] p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded text-[12px] font-title-md bg-primary-container text-white transition-all">
+              Mode Normal
+            </button>
+<button class="px-2.5 py-1 rounded text-[12px] font-title-md text-[#CFE6F6] hover:bg-[#354957] transition-all">
+              Simulasi Beban Puncak (100%)
+            </button>
+<button class="px-2.5 py-1 rounded text-[12px] font-title-md text-[#FFB3AF] hover:bg-[#354957] transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-14" data-icon="error_outline">error_outline</span>
+              Cek Alarm Delta T
+            </button>
+</div>
+</div>
+<!-- Graphic Schematic Canvas (Vendor Neutral Precision Blueprint) -->
+<div class="p-space-lg bg-[#FAF7F2] border-b border-[#E1D5C1] relative">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+<!-- Left Diagram Box: Chilled Water Loop (Evaporator) -->
+<div class="lg:col-span-4 bg-white border border-[#D5C8B2] rounded-xl p-4 shadow-sm relative">
+<div class="flex items-center justify-between pb-2 mb-3 border-b border-[#E1D5C1]">
+<span class="font-label-code text-[12px] font-bold text-[#0F5B8C] flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#0F5B8C]"></span>
+                  CHILLED WATER LOOP (CHW)
+                </span>
+<span class="font-label-code text-[11px] bg-[#D2E7FF] text-[#0F5B8C] px-1.5 py-0.5 rounded">Evaporator</span>
+</div>
+<!-- Loop In / Out Values -->
+<div class="space-y-3">
+<div class="flex items-center justify-between bg-[#F8F9FF] p-2 rounded-lg border border-[#DEE2EC]">
+<span class="font-body-sm text-on-surface-variant">Suhu Masuk (CHW Return):</span>
+<span class="font-label-code font-bold text-headline-sm text-[#0F5B8C]">12.0°C</span>
+</div>
+<div class="flex items-center justify-between bg-[#F8F9FF] p-2 rounded-lg border border-[#DEE2EC]">
+<span class="font-body-sm text-on-surface-variant">Suhu Keluar (CHW Supply):</span>
+<span class="font-label-code font-bold text-headline-sm text-[#1B6D2F]">7.0°C</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-1 border-t border-dashed border-[#E1D5C1]">
+<span>Design Delta T (ΔT):</span>
+<span class="font-label-code font-bold text-on-surface">5.0°C (Normal)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Water Flow Rate:</span>
+<span class="font-label-code font-semibold text-on-surface">1,450 GPM</span>
+</div>
+</div>
+</div>
+<!-- Center Box: Chiller Compressor & Refrigerant Circuit Core -->
+<div class="lg:col-span-4 bg-[#FFFFFF] border-2 border-primary-container rounded-xl p-4 shadow-md relative">
+<div class="text-center pb-2 mb-3 border-b border-[#E1D5C1]">
+<div class="inline-flex items-center gap-1 text-[11px] font-label-code font-bold text-primary-container bg-secondary-container px-2 py-0.5 rounded">
+                  KOMPRESOR SENTRIFUGAL 2-STAGE
+                </div>
+<h3 class="font-title-md text-headline-sm text-on-surface mt-1">Siklus Refrigeran R-134a</h3>
+</div>
+<!-- Gauge Parametric Data -->
+<div class="grid grid-cols-2 gap-2 text-center mb-3">
+<div class="bg-[#FAF7F2] p-2 rounded border border-[#E1D5C1]">
+<span class="font-label-code text-[11px] text-outline block">Suction Press</span>
+<span class="font-label-code font-bold text-title-md text-on-surface">42.8 psig</span>
+<span class="text-[10px] text-outline block font-label-code">(Evap: 4.8°C)</span>
+</div>
+<div class="bg-[#FAF7F2] p-2 rounded border border-[#E1D5C1]">
+<span class="font-label-code text-[11px] text-outline block">Discharge Press</span>
+<span class="font-label-code font-bold text-title-md text-primary-container">128.5 psig</span>
+<span class="text-[10px] text-outline block font-label-code">(Sat: 39.2°C)</span>
+</div>
+</div>
+<div class="bg-secondary-container/40 p-2.5 rounded-lg border border-[#D5C8B2] space-y-1.5 font-label-code text-[12px]">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Tekanan Pompa Oli:</span>
+<strong class="text-on-surface">68.2 psig (ΔP: 25.4)</strong>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Suhu Sump Oli:</span>
+<strong class="text-on-surface">54.0°C (Optimal)</strong>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Vane Guide Position:</span>
+<strong class="text-primary-container">62% Open (Modulating)</strong>
+</div>
+</div>
+</div>
+<!-- Right Diagram Box: Condenser Water Loop (Cooling Tower) -->
+<div class="lg:col-span-4 bg-white border border-[#D5C8B2] rounded-xl p-4 shadow-sm relative">
+<div class="flex items-center justify-between pb-2 mb-3 border-b border-[#E1D5C1]">
+<span class="font-label-code text-[12px] font-bold text-[#8F4E00] flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#8F4E00]"></span>
+                  CONDENSER WATER LOOP (CDW)
+                </span>
+<span class="font-label-code text-[11px] bg-secondary-container text-on-secondary-fixed px-1.5 py-0.5 rounded">Kondensor</span>
+</div>
+<!-- Loop In / Out Values -->
+<div class="space-y-3">
+<div class="flex items-center justify-between bg-[#F8F9FF] p-2 rounded-lg border border-[#DEE2EC]">
+<span class="font-body-sm text-on-surface-variant">Suhu Masuk (dari Tower):</span>
+<span class="font-label-code font-bold text-headline-sm text-[#8F4E00]">32.0°C</span>
+</div>
+<div class="flex items-center justify-between bg-[#F8F9FF] p-2 rounded-lg border border-[#DEE2EC]">
+<span class="font-body-sm text-on-surface-variant">Suhu Keluar (ke Tower):</span>
+<span class="font-label-code font-bold text-headline-sm text-primary-container">37.0°C</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-1 border-t border-dashed border-[#E1D5C1]">
+<span>Cooling Tower Range:</span>
+<span class="font-label-code font-bold text-on-surface">5.0°C (Approach 3.2°C)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>Condenser Flow Rate:</span>
+<span class="font-label-code font-semibold text-on-surface">1,820 GPM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Visual Legend & Flow Indicators -->
+<div class="mt-4 pt-3 border-t border-[#E1D5C1] flex flex-wrap items-center justify-between gap-3 text-body-sm font-label-code text-[12px]">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-1 bg-[#0F5B8C] rounded"></span> Chilled Loop (Evaporator)
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-1 bg-[#8F4E00] rounded"></span> Condenser Loop (Tower)
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-3 h-1 bg-primary-container rounded"></span> Refrigeran Suction/Discharge
+              </span>
+</div>
+<div class="text-on-surface-variant">
+              Status Interlock: <span class="text-[#1B6D2F] font-bold">READY (Permissive Closed)</span>
+</div>
+</div>
+</div>
+<!-- Schematic Interactive Toolbar -->
+<div class="p-space-md bg-[#FFFFFF] flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E1D5C1] hover:bg-[#FAF7F2] text-body-sm font-title-md text-on-surface transition-colors">
+<span class="material-symbols-outlined text-18 text-primary-container" data-icon="zoom_in">zoom_in</span>
+              Perbesar P&amp;ID
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E1D5C1] hover:bg-[#FAF7F2] text-body-sm font-title-md text-on-surface transition-colors">
+<span class="material-symbols-outlined text-18" data-icon="tune">tune</span>
+              Isolasi Katup &amp; Sensor
+            </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E1D5C1] hover:bg-[#FAF7F2] text-body-sm font-title-md text-on-surface transition-colors">
+<span class="material-symbols-outlined text-18" data-icon="restart_alt">restart_alt</span>
+              Reset Simulator
+            </button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-[12px] text-outline">Koneksi DDC Telemetri:</span>
+<span class="inline-flex items-center gap-1 font-label-code text-[12px] text-[#1B6D2F] font-bold">
+<span class="w-2 h-2 rounded-full bg-[#1B6D2F]"></span> ONLINE (BACnet IP #104)
+            </span>
+</div>
+</div>
+</section>
+<!-- ================= PANDUAN LANGKAH TEKNIS BERURUTAN (STEP-BY-STEP SOP) ================= -->
+<section class="bg-[#FFFFFF] border border-[#E1D5C1] rounded-xl p-space-lg shadow-sm space-y-space-lg">
+<div class="border-b border-[#E1D5C1] pb-space-md">
+<span class="font-label-code text-[11px] text-primary-container font-bold tracking-wider">INSTRUKSI KERJA TERSTRUKTUR</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">
+            Prosedur Standar Pengoperasian &amp; Verifikasi Parameter
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Ikuti urutan pemeriksaan 4-tahap di bawah ini sesuai standar operasional gedung. Pastikan setiap verifikasi teknis dicatat pada log sheet fisik atau e-log book tablet.
+          </p>
+</div>
+<!-- Step List Item 1 -->
+<div class="border border-[#E1D5C1] rounded-xl overflow-hidden">
+<div class="bg-[#FAF7F2] p-space-md flex flex-wrap items-center justify-between gap-3 border-b border-[#E1D5C1]">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-white font-label-code font-bold flex items-center justify-center text-sm">
+                01
+              </span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">
+                  Tahap 1: Pre-Start Inspection Katup Manual, Oil Level &amp; Crankcase Heater
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pemeriksaan fisik mekanik sebelum mengalirkan daya kontrol</p>
+</div>
+</div>
+<span class="bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3] font-label-badge text-[11px] px-2.5 py-1 rounded">
+              VERIFIKASI MEKANIK
+            </span>
+</div>
+<div class="p-space-md space-y-3">
+<p class="font-body-md text-body-md text-on-surface">
+              Sebelum memutar selector switch ke posisi manual/auto, periksa visual seluruh perimeter unit pendingin sentrifugal:
+            </p>
+<ul class="space-y-2 text-body-md text-on-surface">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-18 mt-0.5" data-icon="check_box">check_box</span>
+<span><strong>Sight Glass Level Pelumas:</strong> Pastikan level oli kompresor berada di antara 1/2 hingga 3/4 sight glass. Minyak oli tidak boleh berbusa (frothing) yang mengindikasikan migrasi refrigeran cair ke crankcase.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-18 mt-0.5" data-icon="check_box">check_box</span>
+<span><strong>Crankcase Oil Heater:</strong> Periksa lampu indikator heater menyala minimal 12–24 jam sebelum start dingin untuk menjamin temperatur oli minimal 50°C guna memisahkan uap R-134a dari oli sintetik POE.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-18 mt-0.5" data-icon="check_box">check_box</span>
+<span><strong>Katup Isolasi Manual (Butterfly / Gate Valve):</strong> Pastikan katup inlet dan outlet evaporator serta kondenser pada posisi 100% terbuka penuh dan terkunci secara mekanik.</span>
+</li>
+</ul>
+<div class="bg-surface-container/60 p-3 rounded-lg border border-[#DEE2EC] font-label-code text-body-sm text-on-surface-variant flex items-center justify-between">
+<span>Status Check-sheet Tahap 1:</span>
+<span class="text-primary-container font-semibold">Semua Katup &amp; Heater Telah Divalidasi</span>
+</div>
+</div>
+</div>
+<!-- Step List Item 2 -->
+<div class="border border-[#E1D5C1] rounded-xl overflow-hidden">
+<div class="bg-[#FAF7F2] p-space-md flex flex-wrap items-center justify-between gap-3 border-b border-[#E1D5C1]">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-white font-label-code font-bold flex items-center justify-center text-sm">
+                02
+              </span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">
+                  Tahap 2: Start Aliran Pompa Air (CHWP &amp; CDWP) &amp; Cooling Tower Fan
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Membangun flow switch interlocking sebelum kompresor start</p>
+</div>
+</div>
+<span class="bg-[#D2E7FF] text-[#0F5B8C] border border-[#9DC9FA] font-label-badge text-[11px] px-2.5 py-1 rounded">
+              INTERLOCK LOOP
+            </span>
+</div>
+<div class="p-space-md space-y-3">
+<p class="font-body-md text-body-md text-on-surface">
+              Sistem kontrol chiller modern menerapkan <strong>hardwired interlock</strong>. Kompresor chiller tidak akan menerima izin start (permissive run) apabila sensor aliran (paddle switch / differential pressure transmitter) belum mendeteksi aliran stabil:
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-body-sm">
+<div class="p-3 bg-[#FFFFFF] border border-[#E1D5C1] rounded-lg">
+<span class="font-label-code font-bold text-[#0F5B8C] block mb-1">A. Pompa Chilled Water (CHWP)</span>
+                Start pompa sirkulasi primer evaporator. Perhatikan differential pressure manometer (in-out) bernilai minimal 0.8–1.2 bar. Pastikan paddle flow switch menutup sirkuit.
+              </div>
+<div class="p-3 bg-[#FFFFFF] border border-[#E1D5C1] rounded-lg">
+<span class="font-label-code font-bold text-[#8F4E00] block mb-1">B. Pompa Condenser Water (CDWP)</span>
+                Start pompa sirkulasi kondensor ke cooling tower. Pastikan basin cooling tower terisi air sesuai float level, dan jalankan fan tower melalui variable speed drive (VSD).
+              </div>
+</div>
+</div>
+</div>
+<!-- Step List Item 3 -->
+<div class="border border-[#E1D5C1] rounded-xl overflow-hidden">
+<div class="bg-[#FAF7F2] p-space-md flex flex-wrap items-center justify-between gap-3 border-b border-[#E1D5C1]">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-white font-label-code font-bold flex items-center justify-center text-sm">
+                03
+              </span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">
+                  Tahap 3: Start Urutan Kontroler DDC / BMS &amp; Soft-Starter Kompresor
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inisiasi sequence run, pre-lube pompa oli internal, dan pergerakan inlet guide vane</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-fixed border border-[#D5C8B2] font-label-badge text-[11px] px-2.5 py-1 rounded">
+              START SEQUENCE
+            </span>
+</div>
+<div class="p-space-md space-y-3">
+<p class="font-body-md text-body-md text-on-surface">
+              Tekan tombol <strong>CHILLER START</strong> pada kontrol mikroprosesor unit:
+            </p>
+<ol class="list-decimal pl-5 space-y-1.5 text-body-md text-on-surface">
+<li><strong>Pre-Lubrication Cycle (60 Detik):</strong> Pompa oli auxiliary internal akan menyala lebih dahulu untuk melumasi bantalan jurnal dan thrust bearing impeller sentrifugal hingga tekanan oli pelumas mencapai minimal 20 psi di atas tekanan suction.</li>
+<li><strong>Motor Acceleration (Star-Delta / Solid State Soft Starter):</strong> Motor kompresor 380V–660V ditenagai. Arus inrush dibatasi pada maksimum 2.5x full load amperage (FLA).</li>
+<li><strong>Inlet Guide Vane (IGV) Modulation:</strong> Vane guide membuka secara bertahap dari posisi minimum (15%) menuju modulated position berdasarkan deviasi chilled water supply setpoint (7.0°C).</li>
+</ol>
+</div>
+</div>
+<!-- Step List Item 4 -->
+<div class="border border-[#E1D5C1] rounded-xl overflow-hidden">
+<div class="bg-[#FAF7F2] p-space-md flex flex-wrap items-center justify-between gap-3 border-b border-[#E1D5C1]">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-white font-label-code font-bold flex items-center justify-center text-sm">
+                04
+              </span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">
+                  Tahap 4: Pencatatan Log Sheet Tekanan Evaporator, Ampere Motor &amp; Approach Temp
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verifikasi kestabilan kondisi tunak (steady-state 15 menit pasca start)</p>
+</div>
+</div>
+<span class="bg-[#FAF7F2] text-primary-container border border-[#790D16] font-label-badge text-[11px] px-2.5 py-1 rounded">
+              DATA LOGGING
+            </span>
+</div>
+<div class="p-space-md">
+<!-- Table Component: Technical Parametric Log -->
+<div class="overflow-x-auto border border-[#E1D5C1] rounded-lg">
+<table class="w-full text-left border-collapse text-body-sm">
+<thead>
+<tr class="bg-secondary-container/40 border-b border-[#E1D5C1] font-label-badge text-[11px] text-on-surface uppercase tracking-wider">
+<th class="p-2.5">Parameter Pengukuran</th>
+<th class="p-2.5">Satuan Standar</th>
+<th class="p-2.5">Rentang Normal Operasi</th>
+<th class="p-2.5">Batas Alarm Kritis</th>
+<th class="p-2.5 text-right">Nilai Log Saat Ini</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E1D5C1] font-body-sm">
+<tr class="bg-white">
+<td class="p-2.5 font-semibold text-on-surface">Evaporator Approach Temp</td>
+<td class="p-2.5 font-label-code">°C</td>
+<td class="p-2.5 font-label-code">0.5°C – 1.8°C</td>
+<td class="p-2.5 font-label-code text-error">&gt; 2.5°C (Scaling)</td>
+<td class="p-2.5 font-label-code font-bold text-right text-[#1B6D2F]">1.1°C</td>
+</tr>
+<tr class="bg-[#FAF7F2]">
+<td class="p-2.5 font-semibold text-on-surface">Condenser Approach Temp</td>
+<td class="p-2.5 font-label-code">°C</td>
+<td class="p-2.5 font-label-code">1.0°C – 2.5°C</td>
+<td class="p-2.5 font-label-code text-error">&gt; 3.0°C (Fouling)</td>
+<td class="p-2.5 font-label-code font-bold text-right text-[#1B6D2F]">1.8°C</td>
+</tr>
+<tr class="bg-white">
+<td class="p-2.5 font-semibold text-on-surface">Differential Oil Pressure</td>
+<td class="p-2.5 font-label-code">psid</td>
+<td class="p-2.5 font-label-code">20.0 – 35.0 psid</td>
+<td class="p-2.5 font-label-code text-error">&lt; 15.0 psid (Trip)</td>
+<td class="p-2.5 font-label-code font-bold text-right text-[#1B6D2F]">25.4 psid</td>
+</tr>
+<tr class="bg-[#FAF7F2]">
+<td class="p-2.5 font-semibold text-on-surface">Motor Full Load Amperage (%FLA)</td>
+<td class="p-2.5 font-label-code">%</td>
+<td class="p-2.5 font-label-code">45% – 95%</td>
+<td class="p-2.5 font-label-code text-error">&gt; 102% FLA Overload</td>
+<td class="p-2.5 font-label-code font-bold text-right text-[#0F5B8C]">68% FLA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= KOTAK CATATAN LAPANGAN (CHIEF ENGINEER FIELD NOTE) ================= -->
+<section class="bg-[#FAF7F2] border-2 border-[#D5C8B2] rounded-xl p-space-md md:p-space-lg relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 opacity-10 text-primary-container pointer-events-none">
+<span class="material-symbols-outlined text-[140px]" data-icon="engineering">engineering</span>
+</div>
+<div class="flex items-start gap-3.5 relative z-10">
+<div class="p-2.5 bg-secondary-container border border-[#D5C8B2] rounded-xl text-primary-container shrink-0">
+<span class="material-symbols-outlined text-28" data-icon="lightbulb">lightbulb</span>
+</div>
+<div class="space-y-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container">
+                Chief Engineer Field Note #HVAC-92
+              </span>
+<span class="font-label-code text-[11px] bg-white border border-[#D5C8B2] px-2 py-0.5 rounded text-on-surface font-semibold">
+                TIPS OPERASIONAL LAPANGAN
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+<strong>Mencegah Kompresor Surging:</strong> Fenomena <em>surging</em> terjadi saat rasio kompresi melonjak melebihi batas aerodinamis sudu kompresor (biasanya akibat suhu condenser water terlalu panas &gt;36°C atau flow condenser drop mendadak). Hal ini ditandai suara hentakan keras bergetar seperti batuk mesin.
+            </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+<strong>Mencegah Pembekuan Tabung Evaporator (Tube Freeze):</strong> Jangan sekali-kali mengabaikan alarm <em>Freeze Protection Cut-off</em> (standar di 2.5°C). Jika flow chilled water melambat akibat saringan Y-strainer tersumbat, refrigeran cair akan mendidih di bawah 0°C dan dapat memecahkan pipa tembaga evaporator yang mengakibatkan kontaminasi total refrigeran dengan air gedung!
+            </p>
+<div class="pt-2 flex items-center gap-3 font-label-code text-[12px] text-on-surface-variant">
+<span>Instruktur: Ir. H. Suryono, M.T. (Senior M&amp;E Building Consultant)</span>
+<span>•</span>
+<span class="text-primary-container font-semibold">Divisi Operasional &amp; Pemeliharaan Gedung</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FOOTER NAVIGASI PELAJARAN ================= -->
+<footer class="bg-[#FFFFFF] border border-[#E1D5C1] rounded-xl p-space-md flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+<!-- Previous Button -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-[#790D16] text-[#790D16] bg-white font-title-md text-body-sm hover:bg-[#FAF7F2] active:bg-[#F5EFE1] transition-colors" href="#">
+<span class="material-symbols-outlined text-18" data-icon="arrow_back">arrow_back</span>
+          Sebelumnya: Komponen Chiller
+        </a>
+<!-- Middle Quick Status -->
+<div class="text-center font-label-code text-body-sm text-on-surface-variant hidden md:block">
+          Materi 3 dari 6 • Modul HVAC &amp; Refrigerasi
+        </div>
+<!-- Next / Action Button -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-primary-container text-white font-title-md text-body-sm hover:bg-[#5F0B11] active:bg-[#46080D] transition-colors shadow-sm" href="#">
+<span>Lanjut ke Kuis Evaluasi Praktik</span>
+<span class="font-label-code text-[11px] bg-[#5F0B11] px-2 py-0.5 rounded text-white font-normal">Est. 15 Mnt</span>
+<span class="material-symbols-outlined text-18" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</footer>
+</main>
+</div>
+<!-- Micro-interaction script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleSidebarBtn = document.getElementById('toggleSidebarBtn');
+      const aside = document.querySelector('aside');
+      
+      if (toggleSidebarBtn && aside) {
+        toggleSidebarBtn.addEventListener('click', function () {
+          aside.classList.toggle('hidden');
+          if (!aside.classList.contains('hidden')) {
+            aside.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+    });
+  </script>
+</body></html>

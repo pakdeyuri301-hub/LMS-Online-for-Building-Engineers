@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RuangTeknik M&amp;E - Manajemen Akun &amp; Kompetensi Teknisi Gedung</title>
+<!-- Material Symbols & Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#706346",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#51452a",
+            "secondary": "#6a5d40",
+            "on-primary-container": "#ff7f7b",
+            "surface": "#f8f9ff",
+            "on-surface-variant": "#584140",
+            "tertiary-fixed": "#cfe6f6",
+            "outline": "#8b716f",
+            "inverse-surface": "#2c3138",
+            "surface-container-low": "#f0f4fd",
+            "surface-variant": "#dee2ec",
+            "surface-dim": "#d6dae4",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#ffdad7",
+            "surface-container-high": "#e4e8f2",
+            "error": "#ba1a1a",
+            "primary-container": "#790d16",
+            "error-container": "#ffdad6",
+            "on-background": "#171c23",
+            "tertiary": "#132834",
+            "tertiary-container": "#293e4b",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#410005",
+            "outline-variant": "#dfbfbd",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#f3e1bc",
+            "secondary-fixed-dim": "#d6c5a1",
+            "on-primary-fixed-variant": "#891b20",
+            "background": "#f8f9ff",
+            "on-tertiary-fixed": "#071e2a",
+            "inverse-primary": "#ffb3af",
+            "on-tertiary-container": "#93a9b8",
+            "surface-container-highest": "#dee2ec",
+            "secondary-container": "#f3e1bc",
+            "surface-container": "#eaeef8",
+            "inverse-on-surface": "#edf1fb",
+            "tertiary-fixed-dim": "#b3c9da",
+            "surface-bright": "#f8f9ff",
+            "surface-tint": "#aa3435",
+            "on-tertiary-fixed-variant": "#354957",
+            "primary": "#540008",
+            "on-secondary-fixed": "#231a04",
+            "primary-fixed-dim": "#ffb3af",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#171c23"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "0.75rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "gutter": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-code": ["JetBrains Mono"],
+            "headline-xl": ["Inter"],
+            "label-badge": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "label-k3": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "display-lg": ["Inter"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-k3": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Blueprint Subtle Grid Texture */
+    .bg-grid-blueprint {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(225, 213, 193, 0.35) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(225, 213, 193, 0.35) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-[#F5EFE1] text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TOPNAVBAR (Shared Component: TopNavBar) -->
+<header class="w-full px-space-lg h-16 flex items-center justify-between sticky top-0 z-40 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<!-- Left Section: Brand Logo & Search -->
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center font-bold font-label-code text-label-code border border-outline-variant">
+          RT
+        </div>
+<span class="font-headline-md text-headline-md font-bold text-primary-container dark:text-inverse-primary tracking-tight">RuangTeknik</span>
+<span class="hidden lg:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-label-code bg-surface-container-high text-on-surface-variant uppercase tracking-wider font-semibold border border-outline-variant/60">
+          Admin Pusat
+        </span>
+</div>
+<!-- Quick Search Bar (search_bar: on_left) -->
+<div class="relative hidden md:block w-72">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-lg bg-[#FAF7F2] border border-[#D5C8B2] font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container focus:bg-white" placeholder="Cari teknisi, modul, SOP..." type="text"/>
+</div>
+</div>
+<!-- Center Navigation Links -->
+<nav class="hidden xl:flex items-center gap-space-lg">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors duration-150" href="#">Katalog Modul</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors duration-150" href="#">Standar SOP &amp; K3</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors duration-150" href="#">Jadwal Pelatihan</a>
+</nav>
+<!-- Right Trailing Actions & Profile -->
+<div class="flex items-center gap-space-md">
+<!-- Secondary Mode Switcher -->
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-outline-variant text-on-surface-variant font-body-sm text-body-sm hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+<span>Mode Peserta</span>
+</a>
+<!-- Primary Trailing Action (Active Admin Indicator) -->
+<button class="bg-primary-container text-white px-3.5 py-1.5 rounded-lg font-title-md text-body-sm hover:bg-[#5F0B11] active:scale-95 transition-all duration-100 flex items-center gap-1.5 shadow-none">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+<span>Beralih ke Admin</span>
+</button>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center border-l border-outline-variant pl-space-sm gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded-lg transition-colors relative" title="Notifikasi Pelatihan">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded-lg transition-colors" title="Bantuan Regulasi PU">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<!-- Profile Avatar -->
+<div class="flex items-center gap-2 pl-space-xs cursor-pointer group">
+<img class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="Foto Profil Teknisi M&amp;E Gedung professional portrait of a senior mechanical electrical facility engineer wearing a clean high-visibility reflective vest and white hardhat with clear technical facility background softly blurred in modern light tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiq7sukm5jEJu565Czt6yYjfaBGRcYk6unnG2_5H5GwM06PcWuScRB-jPxO3Kw8LF3Ie5zbJpZ5-2z4eoGBtgznnntbpPS1xQdTlYGhGFDp3y-EyzMKvQFr-5WpQ9GpJXVQNWX9Jsa_gC0Mjuy-JaCtl-G_mFaJ32267xp0Tm7XGcsh3KyKT7ZMHLcFoORNmrlUcV57y6CxG9iR0W6K1o8Ol5QvXuHSEtNqoIGq3G2_1YmWotby-gj"/>
+<div class="hidden 2xl:flex flex-col text-left">
+<span class="font-title-md text-[13px] leading-tight text-on-surface">Ir. Danang Wicaksono</span>
+<span class="font-label-code text-[11px] text-on-surface-variant">Kepala Divisi M&amp;E</span>
+</div>
+</div>
+</div>
+</header>
+<!-- BODY SHELL WRAPPER -->
+<div class="flex flex-1 relative">
+<!-- SIDENAVBAR (Shared Component: SideNavBar) -->
+<aside class="fixed left-0 top-16 bottom-0 w-72 flex flex-col p-space-md overflow-y-auto z-30 bg-surface-container-low dark:bg-tertiary border-r border-outline-variant dark:border-outline">
+<!-- Rail Header -->
+<div class="flex items-center gap-3 pb-space-md border-b border-outline-variant/60">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest border border-outline-variant flex items-center justify-center p-1">
+<img class="w-full h-full object-contain" data-alt="Badge K3 Teknisi Listrik Gedung official gold and green safety compliance emblem with lightning bolt and gear engineering insignia against an off-white technical blueprint background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAePxOQ441iF8X2uWzyjoiFCSHu5iF5Mp7WzDoZmck-Ck2s4RC8W4mVsN1EbibVErAjTmiz8ESHsQHmv35DzLojaOUPHnA3ekHsm0ewdnyXDteNJ__BTVB42mDSeIC3ddufC-1NMnYI6-Z5m-ndXP93M3slk9BUN0Y3n4W-c3irqo5N9AYUcMENM057nE5NHD5H5X9CyTyg4EkGUgWPEF09jgRCa5davLJK3UGqPiGOyCoiz3b6FlMt"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary leading-tight">RuangTeknik M&amp;E</h2>
+<p class="font-label-code text-[11px] text-on-surface-variant">Divisi Mekanikal &amp; Elektrikal</p>
+</div>
+</div>
+<!-- Navigation Tabs (Participant / Management Core) -->
+<nav class="mt-space-md flex-1 flex flex-col gap-1">
+<span class="px-space-md py-1 font-label-badge text-[10px] text-on-surface-variant tracking-wider uppercase font-semibold">Menu Utama</span>
+<a class="text-on-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Active Tab: Manajemen Peserta (Current Task) -->
+<a class="bg-secondary-container dark:bg-tertiary-container text-primary-container dark:text-inverse-primary font-title-md text-title-md border-l-4 border-primary-container dark:border-inverse-primary px-space-md py-space-sm flex items-center gap-space-sm rounded-r-lg" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span>Manajemen Peserta</span>
+</a>
+<a class="text-on-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span>Katalog Modul</span>
+</a>
+<a class="text-on-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span>Progres Belajar</span>
+</a>
+<a class="text-on-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Riwayat Kuis</span>
+</a>
+<a class="text-on-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+<span>Profil Saya</span>
+</a>
+<!-- SOP Emergency CTA Box -->
+<div class="mt-space-md p-3 rounded-xl bg-error-container/40 border border-error/30 text-error">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-[18px]">emergency</span>
+<span class="font-label-k3 text-label-k3 uppercase">SOP Darurat K3</span>
+</div>
+<p class="font-body-sm text-[11px] leading-snug text-on-surface">Prosedur LOTO, Evakuasi Chiller, &amp; Bahaya Panel Gardu Tegangan Tinggi.</p>
+<a class="mt-2 inline-flex items-center text-[12px] font-semibold text-error hover:underline gap-1" href="#">
+            Lihat Pedoman <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</nav>
+<!-- Rail Footer Section -->
+<div class="pt-space-md border-t border-outline-variant/60 flex flex-col gap-1">
+<a class="text-on-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span>Bantuan &amp; Regulasi PU</span>
+</a>
+<a class="text-on-surface-variant font-body-md text-body-md px-space-md py-space-sm flex items-center gap-space-sm rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Pengaturan</span>
+</a>
+<div class="px-space-md pt-2 text-[11px] font-label-code text-on-surface-variant/70">
+          v2.4.8-bnsp • M&amp;E Ledger
+        </div>
+</div>
+</aside>
+<!-- MAIN CANVAS (Offset by 288px SideNav) -->
+<main class="ml-72 flex-1 p-space-lg lg:p-margin bg-grid-blueprint min-h-[calc(100vh-64px)]">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+<!-- HEADER ADMIN & PRIMARY ACTIONS -->
+<div class="bg-surface-container-lowest border border-[#E1D5C1] rounded-2xl p-space-lg shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Title & Subtitle -->
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-label-code font-semibold bg-secondary-container text-secondary border border-secondary-fixed-dim">
+                  ADMIN-PORTAL :: M&amp;E-DIR-2025
+                </span>
+<span class="text-on-surface-variant text-[12px] font-body-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-600 inline-block animate-pulse"></span>
+                  Sinkronisasi Otomatis BNSP
+                </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight">
+                Manajemen Akun &amp; Kompetensi Teknisi Gedung
+              </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+                Pantau kepatuhan sertifikasi K3, progres pembelajaran 11 modul, dan lisensi kerja operasional teknisi fasilitas.
+              </p>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Action 1: Ekspor Audit BNSP -->
+<button class="h-11 px-4 rounded-lg bg-surface-container-lowest border border-[#790D16] text-[#790D16] hover:bg-[#F5EFE1] font-title-md text-body-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Ekspor Laporan Audit BNSP (Excel/PDF)</span>
+</button>
+<!-- Action 2: Verifikasi Batch Kartu K3 -->
+<button class="h-11 px-4 rounded-lg bg-tertiary-fixed/40 border border-[#AEC4D4] text-[#1E232A] hover:bg-tertiary-fixed/70 font-title-md text-body-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+<span>Verifikasi Batch Kartu K3</span>
+</button>
+<!-- Action 3: + Tambah Teknisi Baru -->
+<button class="h-11 px-5 rounded-lg bg-[#790D16] hover:bg-[#5F0B11] active:bg-[#46080D] text-white font-title-md text-body-sm flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Undang / Tambah Teknisi Baru</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RINGKASAN KPI PESERTA (Industrial Bento Grid) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1: Total Teknisi Terdaftar -->
+<div class="bg-surface-container-lowest border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-badge text-[11px] uppercase tracking-wider font-semibold">Total Terdaftar</span>
+<span class="material-symbols-outlined text-[#790D16] text-[22px]">badge</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-3xl lg:text-[34px] font-bold text-on-surface leading-none">3.428</span>
+<span class="font-label-code text-[12px] text-on-surface-variant font-medium">Teknisi Gedung</span>
+</div>
+<div class="mt-2.5 flex items-center gap-1.5 text-[12px] text-[#1B6D2F] font-medium">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+142 teknisi bergabung bulan ini</span>
+</div>
+</div>
+</div>
+<!-- KPI 2: Teknisi Aktif Bulan Ini -->
+<div class="bg-surface-container-lowest border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-badge text-[11px] uppercase tracking-wider font-semibold">Aktivitas Operasional</span>
+<span class="material-symbols-outlined text-[#0F5B8C] text-[22px]">engineering</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-3xl lg:text-[34px] font-bold text-on-surface leading-none">2.814</span>
+<span class="font-label-code text-[12px] text-on-surface-variant font-medium">Aktif Bulan Ini</span>
+</div>
+<div class="mt-2.5 flex items-center gap-1.5 text-[12px] text-on-surface-variant font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>82.1% tingkat kehadiran logbook</span>
+</div>
+</div>
+</div>
+<!-- KPI 3: Kepatuhan Sertifikasi K3 Wajib -->
+<div class="bg-surface-container-lowest border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-badge text-[11px] uppercase tracking-wider font-semibold">Kepatuhan K3 Wajib</span>
+<span class="material-symbols-outlined text-[#BA1A1A] text-[22px]">verified</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-3xl lg:text-[34px] font-bold text-on-surface leading-none">94.2%</span>
+<span class="font-label-code text-[12px] text-[#1B6D2F] font-semibold bg-[#D7F5D7] px-1.5 py-0.5 rounded border border-[#A3E2A3]">Terpenuhi</span>
+</div>
+<div class="mt-2.5 flex items-center gap-1 text-[12px] text-[#8F4E00]">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>58 teknisi perlu resertifikasi segera</span>
+</div>
+</div>
+</div>
+<!-- KPI 4: Rata-rata Kelulusan Kuis M&E -->
+<div class="bg-surface-container-lowest border border-[#E1D5C1] rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-2">
+<span class="font-label-badge text-[11px] uppercase tracking-wider font-semibold">Evaluasi Uji Kompetensi</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">quiz</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-3xl lg:text-[34px] font-bold text-on-surface leading-none">84.6%</span>
+<span class="font-label-code text-[12px] text-on-surface-variant font-medium">Avg Score Passing</span>
+</div>
+<div class="mt-2.5 flex items-center gap-1.5 text-[12px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-[#0F5B8C]">school</span>
+<span>Batas minimum kelulusan standar 75.0%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- K3 CRITICAL DIRECTIVE CALLOUT -->
+<div class="bg-[#FFE088]/40 border-l-4 border-[#8F4E00] border border-[#E1D5C1] rounded-r-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#8F4E00] text-[24px]">policy</span>
+<div>
+<span class="font-label-k3 text-label-k3 text-[#2A1700] uppercase">[K3 - MANDAT PU PERMEN 05/2021]</span>
+<p class="font-body-sm text-body-sm text-[#2A1700] mt-0.5">
+                Semua teknisi yang bertugas pada ruang Panel Distribusi Utama (LVMDP) dan Chiller Plant wajib memperbarui dokumen LOTO dan sertifikasi K3 Listrik sebelum tanggal 30 tiap kuartal.
+              </p>
+</div>
+</div>
+<button class="text-xs font-semibold px-3 py-1.5 bg-[#8F4E00] text-white rounded-lg hover:bg-[#6e3c00] transition-colors whitespace-nowrap">
+            Audit Seluruh Ruang Panel
+          </button>
+</div>
+<!-- FILTER & PENCARIAN LANJUTAN -->
+<div class="bg-surface-container-lowest border border-[#E1D5C1] rounded-xl p-space-md shadow-sm space-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+<!-- Pencarian Utama -->
+<div class="lg:col-span-1">
+<label class="block font-label-badge text-[11px] text-on-surface-variant uppercase font-semibold mb-1">Cari Teknisi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg bg-[#FAF7F2] border border-[#D5C8B2] font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container focus:bg-white" placeholder="Nama, NIK BNSP, ID Staff..." type="text"/>
+</div>
+</div>
+<!-- Filter 1: Tipe Gedung Fasilitas -->
+<div>
+<label class="block font-label-badge text-[11px] text-on-surface-variant uppercase font-semibold mb-1">Tipe Gedung Fasilitas</label>
+<select class="w-full px-3 py-2 rounded-lg bg-[#FAF7F2] border border-[#D5C8B2] font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container">
+<option value="all">Semua Tipe Gedung</option>
+<option value="rs">Rumah Sakit</option>
+<option value="hotel">Hotel</option>
+<option value="datacenter">Data Center</option>
+<option value="mall">Mall &amp; Retail</option>
+<option value="office">Gedung Perkantoran</option>
+<option value="factory">Pabrik &amp; Manufaktur</option>
+</select>
+</div>
+<!-- Filter 2: Status K3 -->
+<div>
+<label class="block font-label-badge text-[11px] text-on-surface-variant uppercase font-semibold mb-1">Status Lisensi K3</label>
+<select class="w-full px-3 py-2 rounded-lg bg-[#FAF7F2] border border-[#D5C8B2] font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container">
+<option value="all">Semua Status K3</option>
+<option value="verified">Terverifikasi (Aktif)</option>
+<option value="pending">Menunggu Validasi LOTO</option>
+<option value="expired">Kedaluwarsa / Perlu Review</option>
+</select>
+</div>
+<!-- Filter 3: Tingkat Keahlian -->
+<div>
+<label class="block font-label-badge text-[11px] text-on-surface-variant uppercase font-semibold mb-1">Tingkat Keahlian</label>
+<select class="w-full px-3 py-2 rounded-lg bg-[#FAF7F2] border border-[#D5C8B2] font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary-container">
+<option value="all">Semua Tingkatan</option>
+<option value="junior">Junior Technician</option>
+<option value="madya">Teknisi Madya (Operator Utama)</option>
+<option value="chief">Chief Engineer &amp; SPV</option>
+</select>
+</div>
+</div>
+<!-- Quick Filters Tags & Action Reset -->
+<div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-[#E1D5C1]/60">
+<div class="flex flex-wrap items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="font-medium mr-1">Filter Cepat:</span>
+<button class="px-2.5 py-1 rounded bg-[#FAF7F2] hover:bg-surface-container border border-[#D5C8B2] text-on-surface">Data Center Critical Team</button>
+<button class="px-2.5 py-1 rounded bg-[#FAF7F2] hover:bg-surface-container border border-[#D5C8B2] text-on-surface">Sertifikasi &lt; 30 Hari Expired</button>
+<button class="px-2.5 py-1 rounded bg-[#FAF7F2] hover:bg-surface-container border border-[#D5C8B2] text-on-surface">Modul K3 Belum Lengkap</button>
+</div>
+<button class="text-xs font-semibold text-[#790D16] hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+              Reset Filter
+            </button>
+</div>
+</div>
+<!-- TABEL DATA DIREKTORI PESERTA KOMPREHENSIF -->
+<div class="bg-surface-container-lowest border border-[#E1D5C1] rounded-xl overflow-hidden shadow-sm">
+<!-- Table Top Header Info -->
+<div class="px-space-md py-3 bg-[#FAF7F2] border-b border-[#E1D5C1] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#790D16] text-[18px]">table_rows</span>
+<span class="font-title-md text-[14px] text-on-surface">Direktori Teknisi M&amp;E Terintegrasi</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-code bg-surface-container-high text-on-surface-variant font-medium">3.428 Records</span>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<span>Urutkan: <strong>Terakhir Aktif</strong></span>
+<button class="p-1 hover:text-primary-container" title="Pengaturan Kolom">
+<span class="material-symbols-outlined text-[18px]">view_column</span>
+</button>
+</div>
+</div>
+<!-- Responsive Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#E5D3AF]/25 border-b border-[#E1D5C1] text-[11px] font-title-md uppercase tracking-wider text-on-surface-variant">
+<th class="py-3 px-4">Teknisi</th>
+<th class="py-3 px-4">Fasilitas Penugasan</th>
+<th class="py-3 px-4">Lisensi &amp; Status K3</th>
+<th class="py-3 px-4">Progres 11 Modul</th>
+<th class="py-3 px-4 text-right">Rata-rata Kuis</th>
+<th class="py-3 px-4">Terakhir Aktif</th>
+<th class="py-3 px-4 text-center">Aksi Cepat</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E1D5C1]/70 text-body-sm font-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-[#FAF7F2] transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-[#E1D5C1]" data-alt="Foto profil teknisi mekanikal elektrikal gedung pria mengenakan seragam kerja biru tua dan kacamata keselamatan transparan dengan pencahayaan terang indoor ruang kontrol teknik" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXR6FOJZR_D_3B1KRT4zgu31F3gxoRuUZzM9yTJN0bH-hQhUCPFOATVc16cNuOT_QIhPWXQ0ZgLesET8Poj6jLmaOrdgGwpCxvMotWYQEzW0LjYOjdXZQCFmc_p83txQ6TJnIwKbdBvJEosb0gc-y9jnUtffRUrTqx8T1EGGOOCe5yibyT-DeA1DLtT_BgeuXgrPqN5OmZyTKcA43EEoTi7WOeQKIlmSunoE1BFp8OV8NAoRs7H50q"/>
+<div>
+<div class="font-title-md text-[14px] text-on-surface font-semibold flex items-center gap-1.5">
+                          Bambang Sutrisno, S.T.
+                          <span class="material-symbols-outlined text-[15px] text-[#0F5B8C]" style="font-variation-settings: 'FILL' 1;" title="Terverifikasi BNSP">verified</span>
+</div>
+<div class="font-label-code text-[11px] text-on-surface-variant">NIK: 3276-8812-9901 • Chief Engineer</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Tier-3 Data Center Sentul</div>
+<div class="text-[11px] font-label-code text-on-surface-variant">Zona: Critical Power &amp; Chiller</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1B6D2F]"></span>
+                      K3 PU/Kemenaker Aktif
+                    </span>
+<div class="text-[10px] font-label-code text-on-surface-variant mt-0.5">Exp: 18 Nov 2026</div>
+</td>
+<td class="py-3 px-4">
+<div class="w-36">
+<div class="flex justify-between text-[11px] font-label-code mb-1">
+<span class="font-semibold text-on-surface">11/11 Selesai</span>
+<span class="text-[#1B6D2F]">100%</span>
+</div>
+<div class="w-full bg-[#E5E7EB] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#1B6D2F] h-1.5 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-code font-bold text-on-surface text-[14px]">96%</span>
+<div class="text-[10px] text-[#1B6D2F] font-medium">Sangat Baik</div>
+</td>
+<td class="py-3 px-4">
+<div class="text-on-surface text-[12px]">Hari ini, 09:20 WIB</div>
+<div class="text-[11px] text-on-surface-variant">Modul Genset Paralleling</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Detail Profil &amp; Logbook">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Unduh Transkrip Nilai">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Kirim Peringatan">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#FAF7F2] transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-[#E1D5C1]" data-alt="Foto profil teknisi perempuan muda mengenakan kemeja kerja mekanikal hijau pupus berpadu rompi safety oranye berkerah tegak dengan latar belakang denah blueprint gedung modern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1OXIY4__EzJS8M3crO_yB8frw7xnfozd0k0snYPw4H-DWmtUWjTlGJl2-FtFLbIqE8GEEaawEGtBW5u7K4rOdoOR-RjYu6p6LbYrEdVWpIH8y_r1Qn5irpHzAmq0NzwEfqWOEB-FgSGvQ6vmiw-E7LjFgCQkiQP9fjQ_iJOv0TqjenyvJW9xIsZpAHP5LO1wCLydlk54Qoq4tYVZ2CUCdoslLeih5OnbGM6P7JiIF0ug5dhM6lZCR"/>
+<div>
+<div class="font-title-md text-[14px] text-on-surface font-semibold flex items-center gap-1.5">
+                          Siti Nur Azizah
+                        </div>
+<div class="font-label-code text-[11px] text-on-surface-variant">NIK: 3171-4451-2098 • Teknisi Madya</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">RS Medika Prima Internasional</div>
+<div class="text-[11px] font-label-code text-on-surface-variant">Zona: HVAC Ruang Isolasi &amp; Gas Medis</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#FFE088] text-[#8F4E00] border border-[#E5D3AF]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8F4E00]"></span>
+                      Perlu Review Dokumen
+                    </span>
+<div class="text-[10px] font-label-code text-on-surface-variant mt-0.5">LOTO Card Expiring</div>
+</td>
+<td class="py-3 px-4">
+<div class="w-36">
+<div class="flex justify-between text-[11px] font-label-code mb-1">
+<span class="font-semibold text-on-surface">8/11 Selesai</span>
+<span class="text-[#0F5B8C]">72%</span>
+</div>
+<div class="w-full bg-[#E5E7EB] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#0F5B8C] h-1.5 rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-code font-bold text-on-surface text-[14px]">89%</span>
+<div class="text-[10px] text-[#0F5B8C] font-medium">Baik Sekali</div>
+</td>
+<td class="py-3 px-4">
+<div class="text-on-surface text-[12px]">Kemarin, 14:15 WIB</div>
+<div class="text-[11px] text-on-surface-variant">Modul Otomasi BAS/BMS</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Detail Profil &amp; Logbook">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Unduh Transkrip Nilai">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+<button class="p-1.5 text-[#8F4E00] hover:bg-[#FFE088]/50 rounded" title="Kirim Peringatan Segera">
+<span class="material-symbols-outlined text-[18px]">notification_important</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#FAF7F2] transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-[#E1D5C1]" data-alt="Potret wajah teknisi pria Indonesia paruh baya dengan senyum tenang mengenakan kemeja kerja teknisi bergaris reflektif abu-abu dan memegang clipboard inspeksi fasilitas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5FQUYXaWe6pZpqAbbWqrsKzduJtPkO16LD55psrdr3umXnaSDPBkZoZh0rhNsAFM6SHdMF0ekS6qF0j7xpON3oHdBUWHETUpi3-OFq5b0A_947bearWzOvtw7iI01gQwaXNPvnzomwARi0vMvh2Xxd2omM7OMLfs7IFg-2Q0I604VhHRBjLb4wj6xMJkgikQuDpbY3Pjm2DPM1yUN_mqXCO6A4-09RaaC22zat9ZcbBjGriW12thX"/>
+<div>
+<div class="font-title-md text-[14px] text-on-surface font-semibold flex items-center gap-1.5">
+                          Rahmat Hidayatullah
+                        </div>
+<div class="font-label-code text-[11px] text-on-surface-variant">NIK: 3201-9012-7634 • Junior Technician</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Menara Astra Tower</div>
+<div class="text-[11px] font-label-code text-on-surface-variant">Zona: Distribusi Plumbing &amp; STP</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1B6D2F]"></span>
+                      K3 PU/Kemenaker Aktif
+                    </span>
+<div class="text-[10px] font-label-code text-on-surface-variant mt-0.5">Exp: 04 Agu 2027</div>
+</td>
+<td class="py-3 px-4">
+<div class="w-36">
+<div class="flex justify-between text-[11px] font-label-code mb-1">
+<span class="font-semibold text-on-surface">4/11 Selesai</span>
+<span class="text-secondary">36%</span>
+</div>
+<div class="w-full bg-[#E5E7EB] rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 36%"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-code font-bold text-on-surface text-[14px]">78%</span>
+<div class="text-[10px] text-secondary font-medium">Cukup (Lulus)</div>
+</td>
+<td class="py-3 px-4">
+<div class="text-on-surface text-[12px]">3 hari yang lalu</div>
+<div class="text-[11px] text-on-surface-variant">Pompa Booster &amp; Hidran</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Detail Profil &amp; Logbook">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Unduh Transkrip Nilai">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Kirim Peringatan">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#FAF7F2] transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-[#E1D5C1]" data-alt="Foto profil kepala insinyur gedung bertubuh tegap mengenakan jaket kerja safety lapangan krem dan ID card teknisi berlogo Kementerian PU di ruang boiler uap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsOok5p3alrud7eOxwuOGkyoWa1uLSFq6OIBTgJ6Kseto3yKUrvJvHmU0XBSqS72xPK4_9mrbIPNGGP8Utc88HXKLMkbh50mT56R-HpPeTPqG_7gdtS_OP_rUqpE2NC55eozeYjtKaahko-g1w-8n10mFFmcY7lBq_uEKRed5VdlwZ1J0pyiNL6cvw_F9VmkBp617xLCXvrAXlGcLovjZrd8HQ9JoXchId4Z2fQUtwwZeKeGWWoEQo"/>
+<div>
+<div class="font-title-md text-[14px] text-on-surface font-semibold flex items-center gap-1.5">
+                          Hendro Gunawan
+                          <span class="material-symbols-outlined text-[15px] text-[#0F5B8C]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="font-label-code text-[11px] text-on-surface-variant">NIK: 3175-1123-4556 • Chief Engineer</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Grand Hyatt Jakarta</div>
+<div class="text-[11px] font-label-code text-on-surface-variant">Zona: Boiler, Genset &amp; Lift Penumpang</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1B6D2F]"></span>
+                      K3 PU/Kemenaker Aktif
+                    </span>
+<div class="text-[10px] font-label-code text-on-surface-variant mt-0.5">Exp: 14 Des 2025</div>
+</td>
+<td class="py-3 px-4">
+<div class="w-36">
+<div class="flex justify-between text-[11px] font-label-code mb-1">
+<span class="font-semibold text-on-surface">11/11 Selesai</span>
+<span class="text-[#1B6D2F]">100%</span>
+</div>
+<div class="w-full bg-[#E5E7EB] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#1B6D2F] h-1.5 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-code font-bold text-on-surface text-[14px]">94%</span>
+<div class="text-[10px] text-[#1B6D2F] font-medium">Sangat Baik</div>
+</td>
+<td class="py-3 px-4">
+<div class="text-on-surface text-[12px]">Hari ini, 07:45 WIB</div>
+<div class="text-[11px] text-on-surface-variant">SOP Darurat Pemadaman</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Detail Profil &amp; Logbook">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Unduh Transkrip Nilai">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Kirim Peringatan">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-[#FAF7F2] transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-[#E1D5C1]" data-alt="Potret teknisi muda laki-laki dengan wearpack bengkel abu-abu dan ear defender di leher berlatar belakang panel distribusi listrik industri bertegangan tinggi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkq09hZK5tjFDqVdgiLqgEfJwwVhDEjtZu_X09E4F3AHVVKAt-2Zc_Q1849K8rN6f4lKLzUzAihwgcuP7lmdJQdeNI_t894zanhJCPNOF-IkvqTSu5jM73mulJSB36FD8uSITAT_4Dz3WaE7wqB8GLVpqfy5526I5FfeghsQpGF_Q1tbMbXqmAqvfsSlX0rXiUsM1qXzv38HBwGZKpBGLhZ61Dm9ve6uqHw58PLpcsuxy5aDcJTNI6"/>
+<div>
+<div class="font-title-md text-[14px] text-on-surface font-semibold flex items-center gap-1.5">
+                          Kevin Aditya Pratama
+                        </div>
+<div class="font-label-code text-[11px] text-on-surface-variant">NIK: 3578-9921-1200 • Junior Technician</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Pabrik PT Indotech Cikarang</div>
+<div class="text-[11px] font-label-code text-on-surface-variant">Zona: Substation 20kV &amp; Trafo</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#FFDAD6] text-[#93000a] border border-[#ffb3af]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#BA1A1A]"></span>
+                      Kedaluwarsa
+                    </span>
+<div class="text-[10px] font-label-code text-[#BA1A1A] font-semibold mt-0.5">Expired sejak 12 Okt</div>
+</td>
+<td class="py-3 px-4">
+<div class="w-36">
+<div class="flex justify-between text-[11px] font-label-code mb-1">
+<span class="font-semibold text-on-surface">2/11 Selesai</span>
+<span class="text-error">18%</span>
+</div>
+<div class="w-full bg-[#E5E7EB] rounded-full h-1.5 overflow-hidden">
+<div class="bg-error h-1.5 rounded-full" style="width: 18%"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-code font-bold text-on-surface text-[14px]">64%</span>
+<div class="text-[10px] text-error font-medium">Di Bawah Batas Kelulusan</div>
+</td>
+<td class="py-3 px-4">
+<div class="text-on-surface text-[12px]">12 hari yang lalu</div>
+<div class="text-[11px] text-on-surface-variant">Grounding &amp; Penangkal Petir</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Detail Profil &amp; Logbook">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Unduh Transkrip Nilai">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+<button class="p-1.5 text-white bg-[#BA1A1A] hover:bg-[#93000a] rounded" title="Kirim Peringatan K3 Kritis">
+<span class="material-symbols-outlined text-[18px]">priority_high</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-[#FAF7F2] transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-[#E1D5C1]" data-alt="Foto profil teknisi mekanik gedung pria berkulit sawo matang memegang multimeter digital dengan senyum ramah di koridor instalasi pipa air dingin gedung mall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8LZhiQYx0GhA5bY83cLnpj8fVLJzV2plJ6A4VkBhDkWvvOhrsF1oKbSryGt9no_FTNdvrEKGNYF5kqQprhLnt6uidYvgRT3UpCI-Flgnvv8_aqSALZ9Siragp979UFVyw5gkSlw2H5lJvZ6JYuJfAfEpm0IzVJu78MkSQW4LJbeizCVTqgPym3wbvw2IG4HDTWqyrh9gnUjbmuCXE4kfeNi7YCLMO1EbawIEzuUO8aFJI9_6gk4UH"/>
+<div>
+<div class="font-title-md text-[14px] text-on-surface font-semibold flex items-center gap-1.5">
+                          Teguh Prasetyo, A.Md.
+                        </div>
+<div class="font-label-code text-[11px] text-on-surface-variant">NIK: 3174-8839-4411 • Teknisi Madya</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Grand Indonesia East Mall</div>
+<div class="text-[11px] font-label-code text-on-surface-variant">Zona: Eskalator, Lift &amp; Fire Alarm</div>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-[#D7F5D7] text-[#1B6D2F] border border-[#A3E2A3]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1B6D2F]"></span>
+                      K3 PU/Kemenaker Aktif
+                    </span>
+<div class="text-[10px] font-label-code text-on-surface-variant mt-0.5">Exp: 09 Jan 2026</div>
+</td>
+<td class="py-3 px-4">
+<div class="w-36">
+<div class="flex justify-between text-[11px] font-label-code mb-1">
+<span class="font-semibold text-on-surface">9/11 Selesai</span>
+<span class="text-[#0F5B8C]">81%</span>
+</div>
+<div class="w-full bg-[#E5E7EB] rounded-full h-1.5 overflow-hidden">
+<div class="bg-[#0F5B8C] h-1.5 rounded-full" style="width: 81%"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-code font-bold text-on-surface text-[14px]">87%</span>
+<div class="text-[10px] text-[#0F5B8C] font-medium">Baik Sekali</div>
+</td>
+<td class="py-3 px-4">
+<div class="text-on-surface text-[12px]">Kemarin, 19:30 WIB</div>
+<div class="text-[11px] text-on-surface-variant">Sistem Fire Suppression FM200</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Detail Profil &amp; Logbook">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Unduh Transkrip Nilai">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary-container hover:bg-surface-container rounded" title="Kirim Peringatan">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- PAGINATION LENGKAP & SERVER LATENCY STATUS -->
+<div class="px-space-md py-3.5 bg-surface-container-lowest border-t border-[#E1D5C1] flex flex-col md:flex-row items-center justify-between gap-3 text-body-sm">
+<!-- Left Info & Latency -->
+<div class="flex items-center gap-4 text-on-surface-variant text-[13px]">
+<div>
+                Menampilkan <strong class="text-on-surface">1 - 6</strong> dari <strong class="text-on-surface">3.428</strong> teknisi gedung
+              </div>
+<div class="hidden sm:flex items-center gap-1.5 font-label-code text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span>Latency Server: 42ms (Cluster JK-1 Sentul)</span>
+</div>
+</div>
+<!-- Page Selection Controls -->
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded border border-[#E1D5C1] bg-[#FAF7F2] text-on-surface-variant hover:bg-surface-container disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<!-- Active Page -->
+<button class="px-3 py-1 rounded bg-primary-container text-white font-title-md text-[13px]">
+                1
+              </button>
+<button class="px-3 py-1 rounded border border-[#E1D5C1] bg-surface-container-lowest text-on-surface hover:bg-[#FAF7F2] font-title-md text-[13px]">
+                2
+              </button>
+<button class="px-3 py-1 rounded border border-[#E1D5C1] bg-surface-container-lowest text-on-surface hover:bg-[#FAF7F2] font-title-md text-[13px]">
+                3
+              </button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="px-3 py-1 rounded border border-[#E1D5C1] bg-surface-container-lowest text-on-surface hover:bg-[#FAF7F2] font-title-md text-[13px]">
+                343
+              </button>
+<button class="px-2.5 py-1.5 rounded border border-[#E1D5C1] bg-[#FAF7F2] text-on-surface hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<!-- Items Per Page Selector -->
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant">
+<span>Baris per halaman:</span>
+<select class="px-2 py-1 rounded bg-[#FAF7F2] border border-[#D5C8B2] text-on-surface text-[12px] focus:outline-none">
+<option selected="">10 baris</option>
+<option>25 baris</option>
+<option>50 baris</option>
+<option>100 baris</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
